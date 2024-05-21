@@ -1,7 +1,28 @@
-import { Inter } from "next/font/google";
+import { Zeyada, Comic_Neue, Rampart_One, Pompiere } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const zeyada = Zeyada({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--zeyada-font",
+});
+
+const comic = Comic_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--comic-font",
+});
+
+const rampart = Rampart_One({
+  subsets: ["cyrillic"],
+  weight: "400",
+  variable: "--rampart-font",
+});
+const pompiere = Pompiere({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--pompiere-font",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +32,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${zeyada.variable} ${comic.variable}  ${rampart.variable} ${pompiere.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
