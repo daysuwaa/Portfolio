@@ -43,6 +43,9 @@ body {
 .pompiere-font {
   font-family: var(--pompiere-font);
 }
+.roboto-font {
+  font-family: var(--roboto-font);
+}
 
 @layer utilities {
   .text-balance {
