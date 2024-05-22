@@ -4,6 +4,7 @@ import {
   Rampart_One,
   Pompiere,
   Roboto_Condensed,
+  // Protest_Revolution,
 } from "next/font/google";
 import "./globals.css";
 
@@ -18,6 +19,11 @@ const comic = Comic_Neue({
   weight: "400",
   variable: "--comic-font",
 });
+// const protest = Protest_Revolution({
+//   subsets: ["latin-ext"],
+//   weight: "400",
+//   variable: "--protest-font",
+// });
 
 const rampart = Rampart_One({
   subsets: ["cyrillic"],
@@ -32,7 +38,7 @@ const pompiere = Pompiere({
 
 const roboto = Roboto_Condensed({
   subsets: ["latin"],
-  weight: "100, 200, 300, 400, 500, 700, 800, 900",
+  weight: ["100", "200", "300", "400", "500", "700", "800", "900"],
   variable: "--roboto-font",
 });
 
@@ -45,7 +51,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${zeyada.variable} ${comic.variable}  ${rampart.variable} ${pompiere.variable} ${roboto.variable}`}
+        className={`${zeyada.variable} ${comic.variable}  ${rampart.variable} ${pompiere.variable} ${roboto.variable} `}
       >
         {children}
       </body>
