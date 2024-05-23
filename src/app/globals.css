@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 
-/* html, body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-} */
-
-
 :root {
-  height: auto;
+ 
   --inter-font: 'Inter', sans-serif;
   --foreground-rgb: 20, 0, 50;
   --background-light-start-rgb: 172, 182, 229;
@@ -29,7 +22,7 @@
 
 /* Light mode gradient background */
 body {
-  height: 100vh;
+
   background-image: linear-gradient(
     to bottom right,
     rgb(var(--background-light-start-rgb)),
