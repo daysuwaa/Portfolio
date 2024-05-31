@@ -1,17 +1,20 @@
 "use client";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Home from "./NavPages/Home";
+import About from "./NavPages/About";
+import Projects from "./NavPages/Projects";
+import Contact from "./NavPages/Contact";
+
 export default function Homee() {
   return (
-    <main>
+    <div>
       <Navbar />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
-    </main>
+      <div className="mx-[1.5rem] sm:mx-[4rem] md:mx-[4rem] lg:mx-[8rem] xl:mx-[10rem]">
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </div>
+    </div>
   );
 }
