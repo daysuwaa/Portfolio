@@ -1,25 +1,26 @@
 import Image from "next/image";
 import React from "react";
-import Logo1 from "../../../public/logo/logo2.png";
+import Logo1 from "../../../public/logo/logow.svg";
 import Link from "next/link";
+import MobileNav from "./MobileNav";
+import Logoo from "./Logoo";
 
 const Navbar = () => {
   return (
-    <div className="flex m-[2rem] sm:m-[4rem] items-center inter-font cursor-pointer">
-      <Image src={Logo1} alt="logo" className="w-[8rem] h-[5rem] mr-auto" />
+    <div className="my-[2rem] mx-[2rem] md:mx-[5rem] tracking-wider roboto-font flex items-center justify-between">
+      <Logoo />
       <nav>
-        <ul className="flex  items-center gap-6">
-          <Link href="#section1" className="nav-link nav-link-ltr">
+        <ul className="flex gap-6 font-semibold">
+          <Link href="#section1" className="nav-link-ltr nav-link">
             Home
           </Link>
-
-          <Link href="#section2" className="nav-link nav-link-ltr">
+          <Link href="#section2" className="nav-link-ltr nav-link">
             About
           </Link>
-          <Link href="#section3" className="nav-link nav-link-ltr">
-            Projects
+          <Link href="#section3" className="nav-link-ltr nav-link">
+            Project
           </Link>
-          <Link href="#section4" className="nav-link nav-link-ltr">
+          <Link href="#section4" className="nav-link-ltr nav-link">
             Contact
           </Link>
         </ul>
