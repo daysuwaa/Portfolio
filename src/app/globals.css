@@ -21,15 +21,30 @@
 
 /* Light mode gradient background */
 body {
+background-color: #ffffff;
+color: #000000;
+color: rgb(var(--foreground-rgb)); 
 
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(var(--background-light-start-rgb)),
-    rgb(var(--background-light-end-rgb))
-  );
-  color: rgb(var(--foreground-rgb));
+gradienttext{
+  width:200px;
+  background-image: linear-gradient(to right, rgb(255, 81, 148),rgba(255, 255, 255, 0.95));
+}
+animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
   
 }
+
+  
+  
 
 @media (prefers-color-scheme: dark) {
   /* Dark mode gradient background */
@@ -40,11 +55,14 @@ body {
       rgb(var(--background-dark-end-rgb))
     );
     color: rgb(var(--foreground-rgb));
+    
+    .gradienttextblack{
+      width:200px;
+      background-image: linear-gradient(to right, rgb(255, 0, 98),rgba(0, 0, 0, 0.95));
+    }
   }
 
-  .inter-font{
-    font-family: var(--inter-font);
-  }
+ 
   
 }
 
@@ -102,23 +120,23 @@ body {
 /* gradient text for subheadings */
 .gradienttext{
   width:200px;
-  background-image: linear-gradient(to right, rgb(255, 81, 148),rgba(255, 255, 255, 0.95));
+  background-image: linear-gradient(to right, rgb(255, 0, 98), rgba(87, 0, 36, 0.95));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background-image: linear-gradient(to right, rgb(255, 3, 133),rgba(255, 255, 255, 0.95)); */
 }
+
 .gradienttextblack{
   width:200px;
   background-image: linear-gradient(to right, rgb(255, 0, 98),rgba(0, 0, 0, 0.95));
 }
-
 /* box shadow for the services  */
 .boxshadow{
-  background-color: black;
 
   &:hover {
 
     border: 1px solid;
     box-shadow: 5px 10px;
-
-  
 
   }
   
@@ -137,84 +155,6 @@ body {
   background: #555; 
 }
 
-
-/* nav bg */
-
-
-
-/* @media only screen and (min-width: 768px) {
-  .navbg{
-    background-color: rgb(245, 240, 250, 0.7)
-  }
-}
-@media only screen and (max-width: 600px) {
-.smallnav{
-  font-size: 12px;
-  background-color: #BBBBBB;
-  padding:2px 10px;
-  border-radius: 4px;
-  color: black;
-  
-  &:hover{
-    background-color: rgba(166, 41, 70, 0.7)
-  }
-}
-} */
-
-
-/* rainbow button effect */
-/* .rainbow{
-  display: flex;
-  position: relative;
-  place-items: center;
-  justify-content: center;
-  background: #8a131300;
-  border: 3px solid #ffffff;
-  width: 12rem;
-  color: #fff;
-  font-weight: 700;
-  border-radius: 10px;
-  cursor: pointer;
-  overflow: hidden;
-  padding: 9px 10px;
-  transition: all 0.3s ease-out;
-  font-size: 0.9rem;
-  
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 0px;
-    background: #fff;
-    rotate: 10deg;
-    translate: -150% 0px;
-    scale: 2;
-    transform-origin: top center;
-    z-index: -1;
-    transition: all 0.3s ease-out;
-  }
-  
-  &:hover {
-    color: rgb(244, 63, 94);
-    font-size: 0.8rem;
-    &::before {
-    translate: 50% 0px;
-    
-    }
-  }
-  
-}
-
-
-
-.follow{
-  margin-top: 40px;
-}
-
-.follow a{
-  color: black;
-  padding: 8px 16px;
-  text-decoration: none;
-} */
 
  .navbar {
   border-bottom: 1px solid #BBBBBB;
