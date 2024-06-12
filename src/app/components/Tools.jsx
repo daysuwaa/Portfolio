@@ -16,15 +16,15 @@ import ScrollTools from "./ScrollTools";
 
 const Tools = () => {
   return (
-    <div className="mt-7">
+    <div className="mt-12 text-center  ">
       <h1 className="text-3xl pompiere-font bg-clip-text text-transparent ">
         -
-        <span className="gradienttext dark:bg-gradient-to-r  from-pink-700 to-[#000000] mx-3">
+        <span className="gradienttext dark:bg-gradient-to-r  from-fuchsia-400 to-[#251729] mx-3">
           My Tech stack.
         </span>
       </h1>
-      <div className="hidden md:block">
-        <div className="grid grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="hidden md:block ">
+        <div className="grid grid-cols-3 lg:grid-cols-5  gap-6">
           <ToolsComponent image={html} name="Html 5" />
           <ToolsComponent image={css} name="CSS 3" />
           <ToolsComponent image={js} name="Javascript" />

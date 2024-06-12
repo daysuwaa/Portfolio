@@ -10,7 +10,7 @@ const ServicesComponent = ({ image, title, description }) => {
   return (
     <div className="shadow-[#868686] bg-gray-100 dark:bg-black dark:border-t  border-[#262626] shadow-md boxshadow">
       <div className="m-7">
-        <div className="text-4xl my-6 bg-rose-500 rounded-full w-max p-3 text-center justify-center flex">
+        <div className="text-4xl my-6 bg-fuchsia-700 rounded-full w-max p-3 text-center justify-center flex">
           {image}
         </div>
         <h1 className="font-medium text-2xl pompiere-font mb-6">{title}</h1>
@@ -21,10 +21,10 @@ const ServicesComponent = ({ image, title, description }) => {
 };
 const Services = () => {
   return (
-    <div>
-      <h1 className="text-3xl pompiere-font mt-[3.5rem]">
+    <div className="text-center">
+      <h1 className="text-3xl pompiere-font mt-12">
         -
-        <span className=" mx-3 font-inter gradienttext dark:bg-gradient-to-r  from-pink-700 to-[#000000]">
+        <span className=" mx-3 font-inter gradienttext dark:bg-gradient-to-r  from-fuchsia-400 to-[#251729]">
           Services.
         </span>
       </h1>

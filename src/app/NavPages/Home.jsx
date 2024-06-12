@@ -7,14 +7,14 @@ const Home = () => {
     <section id="section1 ">
       <div className="flex-col mt-[-9rem] flex justify-center text-start  min-h-screen  ">
         <p className="text-gray-600">
-          <b className="text-rose-500  sacramento-font text-5xl">Hi,</b> I am
+          <b className="text-fuchsia-500  sacramento-font text-5xl">Hi,</b> I am
         </p>
         <p className="text-4xl lg:text-6xl font-semibold uppercase textsadow roboto-font mt- 5">
           Aiwerioghene Adesuwa
         </p>
         <div className="my-6">
           <Typed
-            className="text-2xl font-extrabold roboto-font text-rose-500"
+            className="text-2xl font-extrabold roboto-font text-fuchsia-500"
             strings={["Front End Developer 👩🏽‍💻", "Welcome to my Portfolio :)"]}
             typeSpeed={80}
             backSpeed={40}

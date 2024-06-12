@@ -8,7 +8,8 @@ import Logoo from "./Logoo";
 const Navbar = () => {
   return (
     <div className="my-[2rem] mx-[2rem] md:mx-[5rem] tracking-wider roboto-font flex items-center justify-between">
-      <Logoo />
+      {/* <Logoo /> */}
+      D!
       <nav>
         <ul className="flex gap-6 font-semibold">
           <Link href="#section1" className="nav-link-ltr nav-link">

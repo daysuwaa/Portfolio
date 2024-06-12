@@ -6,41 +6,43 @@ import Services from "../components/Services";
 import Me from "../../../public/me.png";
 import Contactme from "../components/Contactme";
 import ScrollTools from "../components/ScrollTools";
+import Link from "next/link";
 
 const About = () => {
   return (
     <section id="section2">
       <div className=" pt-[6rem] min-h-screen border-t-[0.2px] border-gray-300">
-        <div className="grid md:grid-cols-2 items-center">
+        <div className="grid md:grid-cols-1 text-center items-center">
           <div>
             <h1 className="text-3xl pompiere-font ">
               -
-              <span className=" mx-3 font-inter  gradienttext dark:bg-gradient-to-r  from-pink-700 to-[#251729]">
+              <span className=" mx-3 font-inter   gradienttext dark:bg-gradient-to-r  from-fuchsia-400 to-[#251729]">
                 A bit about Me.
               </span>
             </h1>
-            <div className="border-l-8 font-light leading-7 mt-7 text-[13px] px-5 border-rose-700 inter-font">
+            <div className=" font-light leading-7 mt-7 text-[13px] px-5  inter-font">
               Hi, I&apos;m Aiwerioghene Adesuwa, but i go by{" "}
-              <span className="text-rose-500 font-bold">Daysuwa</span> on all
+              <span className="text-fuchsia-500 font-bold">Daysuwa</span> on all
               social media platforms. I am a{" "}
-              <span className="text-rose-500 font-bold">
+              <span className="text-fuchsia-500 font-bold">
                 Front End Developer
               </span>{" "}
               based in Lagos with over a year of experience. I specialize in
               creating attractive and user-friendly web interfaces, focusing on
-              responsive design and clean code. Passionate about technology and
-              constantly learning. <br></br>I'm committed to building engaging
-              and efficient digital experiences.
+              responsive design and clean code.I am Passionate about technology
+              and constantly learning. I am committed to building engaging and
+              efficient digital experiences.
               <br></br>
-              <i className="font-semibold">
-                {" "}
-                Feel free to reach out to me on any of these platforms :)
-              </i>
-              <Contactme />
+              <i className="font-semibold"> Feel free to reach out to me ;)</i>
+              <br></br>
+              <Link href="#section4">
+                <>
+                  <button className="contactmebutton  bg-fuchsia-700 mt-5  font-medium animate-bounce rounded-md px-4 py-1.5">
+                    Contact me
+                  </button>
+                </>
+              </Link>
             </div>
-          </div>
-          <div className="hidden md:block  ml-auto">
-            <Image src={Me} alt="me" className="w-[400px] h-[400px]" />
           </div>
         </div>
         <Tools />
