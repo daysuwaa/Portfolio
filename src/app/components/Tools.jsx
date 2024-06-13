@@ -3,7 +3,7 @@ import html from "../../../public/html.png";
 import css from "../../../public/css.png";
 import js from "../../../public/js.png";
 import tailwind from "../../../public/tailwind.png";
-import next from "../../../public/next.svg";
+import next from "../../../public/nextjs.jpeg";
 import bootstrap from "../../../public/bootstrap.png";
 import react from "../../../public/react.png";
 import git from "../../../public/git.png";

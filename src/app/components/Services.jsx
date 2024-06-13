@@ -10,11 +10,15 @@ const ServicesComponent = ({ image, title, description }) => {
   return (
     <div className="shadow-[#868686] bg-gray-100 dark:bg-black dark:border-t  border-[#262626] shadow-md boxshadow">
       <div className="m-7">
-        <div className="text-4xl my-6 bg-fuchsia-700 rounded-full w-max p-3 text-center justify-center flex">
+        <div className="text-4xl my-6 bg-fuchsia-500 dark:bg-fuchsia-400 rounded-full w-max p-3 text-center justify-center flex">
           {image}
         </div>
-        <h1 className="font-medium text-2xl pompiere-font mb-6">{title}</h1>
-        <p className="text-[12px]  leading-7">{description}</p>
+        <h1 className="font-medium text-start md:text-center text-2xl pompiere-font mb-6">
+          {title}
+        </h1>
+        <p className="text-[12px] text-start md:text-center  leading-7">
+          {description}
+        </p>
       </div>
     </div>
   );

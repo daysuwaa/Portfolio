@@ -20,11 +20,13 @@ const About = () => {
                 A bit about Me.
               </span>
             </h1>
-            <div className=" font-light leading-7 mt-7 text-[13px] px-5  inter-font">
+            <div className=" font-light leading-7 mt-7 text-[13px]  inter-font">
               Hi, I&apos;m Aiwerioghene Adesuwa, but i go by{" "}
-              <span className="text-fuchsia-500 font-bold">Daysuwa</span> on all
-              social media platforms. I am a{" "}
-              <span className="text-fuchsia-500 font-bold">
+              <span className="dark:text-fuchsia-300 text-fuchsia-500  font-bold">
+                Daysuwa
+              </span>{" "}
+              on all social media platforms. I am a{" "}
+              <span className="dark:text-fuchsia-300 text-fuchsia-500  font-bold">
                 Front End Developer
               </span>{" "}
               based in Lagos with over a year of experience. I specialize in
@@ -37,7 +39,7 @@ const About = () => {
               <br></br>
               <Link href="#section4">
                 <>
-                  <button className="contactmebutton  bg-fuchsia-700 mt-5  font-medium animate-bounce rounded-md px-4 py-1.5">
+                  <button className="contactmebutton   mt-5  font-medium animate-bounce">
                     Contact me
                   </button>
                 </>

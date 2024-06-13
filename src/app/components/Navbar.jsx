@@ -9,7 +9,9 @@ const Navbar = () => {
   return (
     <div className="my-[2rem] mx-[2rem] md:mx-[5rem] tracking-wider roboto-font flex items-center justify-between">
       {/* <Logoo /> */}
-      <p className="gwendolyn-font text-4xl">D!</p>
+      <p className="gwendolyn-font text-4xl bg-fuchsia-100 dark:text-black rounded-full px-2.5 py-2">
+        D!
+      </p>
       <nav>
         <ul className="flex gap-6 font-semibold">
           <Link href="#section1" className="nav-link-ltr nav-link">

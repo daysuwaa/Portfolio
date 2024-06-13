@@ -17,14 +17,10 @@ const ProjectsDisplay = ({
   description,
   linksrc,
   gitsrc,
-  isMain,
+  technology,
 }) => {
   return (
-    <div
-      className={`  transition-transform ${
-        isMain ? "scale-100 opacity-100" : "scale-75 hover:scale-90 opacity-50"
-      } duration-500 transform hover:scale-105 hover:opacity-100 bg-gray-50 dark:bg-[#0a0a0a] h-full shadow-lg shadow-[#272727] rounded-md`}
-    >
+    <div className=" duration-500 transform block md:hidden hover:scale-105 hover:shadow-md hover:shadow-black bg-gray-100 dark:bg-[#0a0a0a] h-full border-dashed border-zinc-600 border-[0.2px] p-5 rounded-sm">
       <Image src={imageSrc} alt={`${title} image`} />
       <div className="p-2">
         <h1 className="text-[20px] roboto-font text-center font-medium">
@@ -38,7 +34,7 @@ const ProjectsDisplay = ({
 
         <div className="flex justify-center items-center mx-2 gap-4 my-4">
           <Link href={linksrc} passHref>
-            <button className=" border-black  dark:border-none dark:bg-[#232323] bg-slate-200  px-3 py-1.5 border-[0.2px] rounded-md text-[12px]">
+            <button className=" border-black dark:border-none dark:bg-[#232323] bg-slate-200  px-3 py-1.5 border-[0.2px] rounded-md text-[12px]">
               View Project
             </button>
           </Link>
@@ -116,36 +112,25 @@ const projectData = [
   },
 ];
 
-const Projects = () => {
+const Projectssm = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const showPrevProject = () => {
+  const prevProject = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? projectData.length - 1 : prevIndex - 1
     );
   };
 
-  const showNextProject = () => {
+  const nextProject = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === projectData.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const getDisplayedProjects = () => {
-    const mainProject = projectData[currentIndex];
-    const prevIndex =
-      (currentIndex - 1 + projectData.length) % projectData.length;
-    const nextIndex = (currentIndex + 1) % projectData.length;
-    const prevProject = projectData[prevIndex];
-    const nextProject = projectData[nextIndex];
-
-    return { mainProject, prevProject, nextProject };
-  };
-
-  const { mainProject, prevProject, nextProject } = getDisplayedProjects();
+  const currentProject = projectData[currentIndex];
 
   return (
-    <div id="section3" className=" hidden md:block my-[3.5rem]">
+    <div id="section3" className=" block md:hidden my-[3.5rem]">
       <div>
         <h1 className="text-3xl text-center pompiere-font">
           -{" "}
@@ -168,48 +153,26 @@ const Projects = () => {
         </p>
         <div className="flex items-center justify-center mt-7">
           <button
-            onClick={showPrevProject}
-            className="p-2.5 bg-black  rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
+            onClick={prevProject}
+            className="p-2.5  bg-slate-200 rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
           >
-            <FaArrowLeft className="text-fuchsia-300 " />
+            <FaArrowLeft className="text-fuchsia-500" />
           </button>
-          <div className="flex w-full mx-4 gap-4 justify-center">
+          <div className="w-full mx-4">
             <ProjectsDisplay
-              key={(currentIndex - 1 + projectData.length) % projectData.length}
-              imageSrc={prevProject.imageSrc}
-              title={prevProject.title}
-              description={prevProject.description}
-              technology={prevProject.technology}
-              linksrc={prevProject.linksrc}
-              gitsrc={prevProject.gitsrc}
-              isMain={false}
-            />
-            <ProjectsDisplay
-              key={currentIndex}
-              imageSrc={mainProject.imageSrc}
-              title={mainProject.title}
-              description={mainProject.description}
-              technology={mainProject.technology}
-              linksrc={mainProject.linksrc}
-              gitsrc={mainProject.gitsrc}
-              isMain={true}
-            />
-            <ProjectsDisplay
-              key={(currentIndex + 1) % projectData.length}
-              imageSrc={nextProject.imageSrc}
-              title={nextProject.title}
-              description={nextProject.description}
-              technology={nextProject.technology}
-              linksrc={nextProject.linksrc}
-              gitsrc={nextProject.gitsrc}
-              isMain={false}
+              imageSrc={currentProject.imageSrc}
+              title={currentProject.title}
+              description={currentProject.description}
+              technology={currentProject.technology}
+              linksrc={currentProject.linksrc}
+              gitsrc={currentProject.gitsrc}
             />
           </div>
           <button
-            onClick={showNextProject}
-            className="p-2.5 bg-black  rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
+            onClick={nextProject}
+            className="p-2.5 bg-slate-200  rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
           >
-            <FaArrowRight className="text-fuchsia-300" />
+            <FaArrowRight className="text-fuchsia-500" />
           </button>
         </div>
       </div>
@@ -217,4 +180,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projectssm;
