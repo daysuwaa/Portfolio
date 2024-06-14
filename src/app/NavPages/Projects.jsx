@@ -38,7 +38,7 @@ const ProjectsDisplay = ({
 
         <div className="flex justify-center items-center mx-2 gap-4 my-4">
           <Link href={linksrc} passHref>
-            <button className=" border-black  dark:border-none dark:bg-[#232323] bg-slate-200  px-3 py-1.5 border-[0.2px] rounded-md text-[12px]">
+            <button className=" border-black hover:bg-slate-300  dark:border-none dark:bg-[#232323] bg-slate-200  px-3 py-1.5 border-[0.2px] rounded-md text-[12px]">
               View Project
             </button>
           </Link>

@@ -72,9 +72,11 @@ const Contact = () => {
         interested in working with me or have any questions about my projects,
         feel free to reach out to me through any of these platforms!
         <br></br>
-        <i className="text-fuchsia-400">Looking forward to hearing from you!</i>
+        <i className="text-fuchsia-400 font-semibold">
+          Looking forward to hearing from you!
+        </i>
       </p>
-      <div className="grid md:grid-cols-3  items-center">
+      <div className="grid md:grid-cols-3 items-center">
         {ContactInfo.map((informations, index) => {
           return (
             <ContactDisplay
