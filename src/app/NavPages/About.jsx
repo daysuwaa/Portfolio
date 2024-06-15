@@ -1,10 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Image from "next/image";
 import Tools from "../components/Tools";
 import Services from "../components/Services";
-import Me from "../../../public/me.png";
-import Contactme from "../components/Contactme";
 import ScrollTools from "../components/ScrollTools";
 import Link from "next/link";
 

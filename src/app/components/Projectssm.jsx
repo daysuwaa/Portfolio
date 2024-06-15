@@ -7,7 +7,7 @@ import codestash from "../../../public/projects/codestash.png";
 import bulkpayment from "../../../public/projects/bulkpayment.png";
 import uber from "../../../public/projects/uber.png";
 import vans from "../../../public/projects/vans.png";
-import { FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
 

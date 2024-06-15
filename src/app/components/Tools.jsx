@@ -11,8 +11,6 @@ import github from "../../../public/github.svg";
 import vscode from "../../../public/vscode.svg";
 import vite from "../../../public/vite.png";
 import ToolsComponent from "./ToolsComponent";
-import Image from "next/image";
-import ScrollTools from "./ScrollTools";
 
 const Tools = () => {
   return (
