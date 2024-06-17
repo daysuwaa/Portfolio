@@ -32,7 +32,7 @@ const Services = () => {
           Services.
         </span>
       </h1>
-      <div className="grid md:grid-cols-3 mt-7 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-7 gap-6">
         <ServicesComponent
           image={<IoCodeOutline />}
           title="Web Development"
