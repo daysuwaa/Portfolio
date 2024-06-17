@@ -153,7 +153,7 @@ const Projects = () => {
             Projects.
           </span>
         </h1>
-        <p className="leading-8 mt-7 text-[13px] font-medium">
+        <p className="leading-8 mt-7 text-[13px] text-center font-medium">
           Below are a selection of completed projects I&apos;ve meticulously
           crafted from the ground up. They have{" "}
           <span className="dark:text-fuchsia-300 text-fuchsia-500 ">
