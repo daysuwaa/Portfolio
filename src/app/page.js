@@ -5,6 +5,7 @@ import About from "./NavPages/About";
 import Projects from "./NavPages/Projects";
 import Contact from "./NavPages/Contact";
 import Projectssm from "./components/Projectssm";
+import Footer from "./components/Footer";
 
 export default function Homee() {
   return (
@@ -16,6 +17,7 @@ export default function Homee() {
         <Projects />
         <Projectssm />
         <Contact />
+        <Footer />
       </div>
     </div>
   );
