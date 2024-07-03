@@ -93,7 +93,7 @@ const projectData = [
     description:
       " Development of a landing page, showcasing my expertise in creating visually appealing and user-friendly web interfaces.",
 
-    linksrc: "#",
+    linksrc: "https://bulkpayment-landingpage.vercel.app",
     gitsrc: "https://github.com/daysuwaa/BulkTransfer-landingpage",
   },
   {
