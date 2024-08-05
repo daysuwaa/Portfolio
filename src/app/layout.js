@@ -57,7 +57,7 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-  title: "daysuwaa",
+  title: "adesuwa.xyz",
 };
 
 export default function RootLayout({ children }) {
