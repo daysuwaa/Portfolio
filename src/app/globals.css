@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --inter-font: 'Inter', sans-serif;
+  --inter-font: "Inter", sans-serif;
   --foreground-rgb: 20, 0, 50;
   --background-light-start-rgb: 255, 255, 255;
   --background-light-end-rgb: 255, 255, 255;
@@ -18,23 +17,24 @@
   }
 }
 
-
 /* Light mode gradient background */
 body {
-background-color: #ffffff;
-color: #000000;
-color: rgb(var(--foreground-rgb)); 
+  background-color: #ffffff;
+  color: #000000;
+  color: rgb(var(--foreground-rgb));
 
-gradienttext{
-  width:200px;
-  background-image: linear-gradient(to right, rgb(255, 81, 148),rgba(255, 255, 255, 0.95));
-}
-animation: fadeInAnimation ease 3s;
+  gradienttext {
+    width: 200px;
+    background-image: linear-gradient(
+      to right,
+      rgb(255, 81, 148),
+      rgba(255, 255, 255, 0.95)
+    );
+  }
+  animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-
-
 
 @media (prefers-color-scheme: dark) {
   /* Dark mode gradient background */
@@ -45,25 +45,25 @@ animation: fadeInAnimation ease 3s;
       rgb(var(--background-dark-end-rgb))
     );
     color: rgb(var(--foreground-rgb));
-    
-    .gradienttextblack{
-      width:200px;
-      background-image: linear-gradient(to right, rgb(255, 0, 98),rgba(0, 0, 0, 0.95));
+
+    .gradienttextblack {
+      width: 200px;
+      background-image: linear-gradient(
+        to right,
+        rgb(255, 0, 98),
+        rgba(0, 0, 0, 0.95)
+      );
     }
   }
-
- 
-  
 }
 
-.textshadow{
+.textshadow {
   color: #fff;
--webkit-box-reflect: below;
-  text-shadow: 2px 8px  8px #cccccc;
+  -webkit-box-reflect: below;
+  text-shadow: 2px 8px 8px #cccccc;
   background-clip: text;
-  color: transparent; 
+  color: transparent;
 }
-
 
 /* google fonts */
 .zeyada-font {
@@ -78,19 +78,18 @@ animation: fadeInAnimation ease 3s;
 .roboto-font {
   font-family: var(--roboto-font);
 }
-.inter-font{
+.inter-font {
   font-family: var(--inter-font);
 }
-.sacramento-font{
+.sacramento-font {
   font-family: var(--sacramento-font);
 }
-.oswald-font{
+.oswald-font {
   font-family: var(--oswald-font);
 }
-.gwendolyn-font{
+.gwendolyn-font {
   font-family: var(--gwendolyn-font);
 }
-
 
 @layer utilities {
   .text-balance {
@@ -103,7 +102,11 @@ animation: fadeInAnimation ease 3s;
   animation: bounce 2s infinite;
 }
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -114,28 +117,32 @@ animation: fadeInAnimation ease 3s;
   }
 }
 /* gradient text for subheadings */
-.gradienttext{
-  width:200px;
-  background-image: linear-gradient(to right, rgb(255, 0, 234), rgba(87, 0, 36, 0.95));
+.gradienttext {
+  width: 200px;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 0, 234),
+    rgba(87, 0, 36, 0.95)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* background-image: linear-gradient(to right, rgb(255, 3, 133),rgba(255, 255, 255, 0.95)); */
 }
 
-.gradienttextblack{
-  width:200px;
-  background-image: linear-gradient(to right, rgb(255, 0, 247),rgba(0, 0, 0, 0.95));
+.gradienttextblack {
+  width: 200px;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 0, 247),
+    rgba(0, 0, 0, 0.95)
+  );
 }
 /* box shadow for the services  */
-.boxshadow{
-
+.boxshadow {
   &:hover {
-
     border: 1px solid;
     box-shadow: 5px 10px;
-
   }
-  
 }
 /* scrollling tools */
 ::-webkit-scrollbar {
@@ -143,38 +150,36 @@ animation: fadeInAnimation ease 3s;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #161616; 
+  background: #161616;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
-
- .navbar {
-  border-bottom: 1px solid #BBBBBB;
-} 
+.navbar {
+  border-bottom: 1px solid #bbbbbb;
+}
 
 .nav-link {
   padding: 15px 0px;
   display: inline-block;
   position: relative;
 
-
   /* opacity: 0.75; */
 }
 
 .nav-link:hover {
   opacity: 1;
-} 
+}
 
 .nav-link::before {
   transition: 300ms;
   height: 5px;
   content: "";
   position: absolute;
-  background-color:rgb(230, 148, 245)
+  background-color: rgb(230, 148, 245);
 }
 
 .nav-link-ltr::before {
@@ -195,27 +200,25 @@ animation: fadeInAnimation ease 3s;
   }
 }
 
-#section2{
+#section2 {
   animation: 1s ease-out 0s 1 slideInLeft;
-  
 }
-
 
 .contactmebutton {
   display: inline-block;
   padding: 8px 12px;
-  color:#c02eda;
+  color: #c02eda;
   font-size: 12px;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
   z-index: 1;
   border-radius: 4px;
-  background-color: transparent ;
+  background-color: transparent;
 }
 
 .contactmebutton:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -228,13 +231,13 @@ animation: fadeInAnimation ease 3s;
 }
 
 .contactmebutton:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: rgb(188, 99, 204) ;
+  background-color: rgb(188, 99, 204);
   transition: all 0.3s;
   border-radius: 4px;
   z-index: -1;
@@ -248,8 +251,6 @@ animation: fadeInAnimation ease 3s;
   width: 100%;
 }
 
-
-
 .projectbutton {
   display: inline-block;
   color: #fff;
@@ -257,11 +258,11 @@ animation: fadeInAnimation ease 3s;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background-color: rgb(125, 30, 142) ;
+  background-color: rgb(125, 30, 142);
 }
 
 .projectbutton:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -273,15 +274,15 @@ animation: fadeInAnimation ease 3s;
 }
 
 .projectbutton:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: rgb(7, 4, 7) ;
+  background-color: rgb(7, 4, 7);
   transition: all 0.3s;
- 
+
   z-index: -1;
 }
 

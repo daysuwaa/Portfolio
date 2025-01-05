@@ -30,6 +30,26 @@ const Home = () => {
         >
           Download Resume
         </Link> */}
+
+        <div
+          style={{
+            position: "fixed",
+            zIndex: 2147483647,
+            pointerEvents: "none",
+          }}
+        >
+          <issueiq-bubble
+            sender-text-color="#000000"
+            bot-text-color="#ffffff"
+            chatbot-id="3f102c32-b748-4823-bb5f-a63ab4b93542"
+            style={{ pointerEvents: "auto" }}
+          ></issueiq-bubble>
+        </div>
+
+        <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/issueiq@0.2.2/dist/loader.js"
+        ></script>
       </div>
     </section>
   );
