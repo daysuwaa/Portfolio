@@ -68,8 +68,8 @@ export default function RootLayout({ children }) {
           className={`${zeyada.variable} ${comic.variable}  ${pompiere.variable} ${roboto.variable} ${inter.variable} ${gwendolyn.variable} ${sacramento.variable} ${oswald.variable}`}
         >
           {children}
-          {/*  */}
-          <div
+
+          {/* <div
             style={{
               position: "fixed",
               zIndex: 2147483647,
@@ -77,13 +77,27 @@ export default function RootLayout({ children }) {
             }}
           >
             <issueiq-bubble
+              sender-text-color="#00000"
+              bot-text-color="#D3D3D3"
+              chatbot-id="033ab3f7-608e-4f40-a38c-3a4aead8da49"
+              style={{ pointerEvents: "auto" }}
+            ></issueiq-bubble>
+          </div> */}
+          <div
+            style={{
+              position: "fixed",
+              zIndex: 2147483647,
+              pointerEvents: "none",
+              touchAction: "none",
+            }}
+          >
+            <issueiq-bubble
               sender-text-color="#000000"
-              bot-text-color="#ffffff"
-              chatbot-id="3f102c32-b748-4823-bb5f-a63ab4b93542"
-              style={{ pointerEvents: "auto", color: "black" }}
+              bot-text-color="#ADD8E6"
+              chatbot-id="033ab3f7-608e-4f40-a38c-3a4aead8da49"
+              style={{ pointerEvents: "auto" }}
             ></issueiq-bubble>
           </div>
-
           <script
             defer
             src="https://cdn.jsdelivr.net/npm/issueiq@0.2.2/dist/loader.js"
