@@ -25,12 +25,12 @@ const About = () => {
               <span className="dark:text-fuchsia-300 text-fuchsia-500  font-bold">
                 Front End Developer
               </span>{" "}
-              based in Lagos with over a year of experience. I specialize in
-              creating attractive and user-friendly web interfaces, focusing on
-              responsive design and clean code.I am Passionate about technology
-              and constantly learning. I am committed to building engaging and
-              efficient digital experiences. I&apos;m a team player, and i
-              always strive to help my team memebers.
+              based in Lagos, Nigeria. I specialize in creating attractive and
+              user-friendly web interfaces, focusing on responsive design and
+              clean code.I am Passionate about technology and constantly
+              learning. I am committed to building engaging and efficient
+              digital experiences. I&apos;m a team player, and i always strive
+              to help my team memebers.
               <br></br>
               When im not coding you&apos;ll find me watching netflix series,
               cooking or learning something new.
