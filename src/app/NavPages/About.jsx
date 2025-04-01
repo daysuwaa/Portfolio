@@ -32,8 +32,6 @@ const About = () => {
               digital experiences. I&apos;m a team player, and i always strive
               to help my team memebers.
               <br></br>
-              When im not coding you&apos;ll find me watching netflix series,
-              cooking or learning something new.
               <br></br>
               <i className="font-semibold"> Feel free to reach out to me ;)</i>
               <br></br>
