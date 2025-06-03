@@ -15,7 +15,7 @@ const Contactme = () => {
       <Link href="https://x.com/daysuwaa_a" className="w-fit">
         <FaXTwitter className="w-[1.5rem]  h-[1.8rem]  hover:text-slate-400" />
       </Link>
-      <Link href="mailto:daysuwaaiwerioghene@icloud.com" className="w-fit">
+      <Link href="mailto:adesuwaaiwerioghene12@gmail.com" className="w-fit">
         <MdOutlineMail className="w-[1.8rem]  h-[2rem]  hover:text-slate-400" />
       </Link>
     </div>

@@ -11,6 +11,7 @@ import github from "../../../public/github.svg";
 import vscode from "../../../public/vscode.svg";
 import vite from "../../../public/vite.png";
 import ToolsComponent from "./ToolsComponent";
+import Ts from "../../../public/Typescript Logo.svg";
 
 const Tools = () => {
   return (
@@ -34,6 +35,7 @@ const Tools = () => {
           <ToolsComponent image={github} name="Github" />
           <ToolsComponent image={vite} name="Vite JS" />
           <ToolsComponent image={vscode} name="VS Code" />
+          <ToolsComponent image={Ts} name="Typescript" />
         </div>
       </div>
     </div>

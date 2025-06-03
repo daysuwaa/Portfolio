@@ -10,8 +10,8 @@ const ContactInfo = [
   {
     icons: <MdOutlineMail className="w-8 h-8" />,
     name: "Email",
-    link: "mailto:daysuwaaiwerioghene@icloud.com",
-    linkName: "daysuwaaiwerioghene@icloud.com",
+    link: "mailto:dadesuwaaiwerioghene12@gmail.com",
+    linkName: "adesuwaaiwerioghene12@gmail.com",
   },
   {
     icons: <FaGithub className="w-8 h-8" />,

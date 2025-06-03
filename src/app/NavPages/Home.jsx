@@ -24,14 +24,8 @@ const Home = () => {
             loop
           />
         </div>
-        {/* <Link
-          href={Resume}
-          className="contactmebutton font-medium w-fit mt-[4rem]"
-        >
-          Download Resume
-        </Link> */}
 
-        <div
+        {/* <div
           style={{
             position: "fixed",
             zIndex: 2147483647,
@@ -44,12 +38,12 @@ const Home = () => {
             chatbot-id="3f102c32-b748-4823-bb5f-a63ab4b93542"
             style={{ pointerEvents: "auto" }}
           ></issueiq-bubble>
-        </div>
+        </div> */}
 
-        <script
+        {/* <script
           defer
           src="https://cdn.jsdelivr.net/npm/issueiq@0.2.2/dist/loader.js"
-        ></script>
+        ></script> */}
       </div>
     </section>
   );

@@ -70,8 +70,17 @@ const projectData = [
     gitsrc: "https://github.com/daysuwaa/Bank-Website",
   },
   {
+    imageSrc: bulkpayment,
+    title: "Bulk payment Landing page",
+    description:
+      " Development of a landing page, showcasing my expertise in creating visually appealing and user-friendly web interfaces.",
+
+    linksrc: "https://bulkpayment-landingpage.vercel.app",
+    gitsrc: "https://github.com/daysuwaa/BulkTransfer-landingpage",
+  },
+  {
     imageSrc: chevron,
-    title: "Chevron",
+    title: "Bulk Billerpro Dashboard",
     description:
       "Developed a UI featuring a dashboard designed for initiating and managing bulk payments",
 
@@ -87,15 +96,7 @@ const projectData = [
     linksrc: "https://codestashh.vercel.app/login",
     gitsrc: "https://github.com/daysuwaa/CodestashFe",
   },
-  {
-    imageSrc: bulkpayment,
-    title: "Landing page",
-    description:
-      " Development of a landing page, showcasing my expertise in creating visually appealing and user-friendly web interfaces.",
 
-    linksrc: "https://bulkpayment-landingpage.vercel.app",
-    gitsrc: "https://github.com/daysuwaa/BulkTransfer-landingpage",
-  },
   {
     imageSrc: uber,
     title: "Uber",

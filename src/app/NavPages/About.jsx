@@ -35,13 +35,27 @@ const About = () => {
               <br></br>
               <i className="font-semibold"> Feel free to reach out to me ;)</i>
               <br></br>
-              <Link href="#section4">
+              {/* <Link href="#section4">
                 <>
                   <button className="contactmebutton   mt-5  font-medium animate-bounce">
                     Contact me
                   </button>
                 </>
-              </Link>
+              </Link> */}
+              {/* <Link
+                href={Resume}
+                className="contactmebutton font-medium w-fit mt-[4rem]"
+              >
+                Download Resume
+              </Link> */}
+              <a
+                href="/Aiwerioghene Adesuwa Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contactmebutton mt-5 font-medium animate-bounce"
+              >
+                Download Resume
+              </a>
             </div>
           </div>
         </div>
