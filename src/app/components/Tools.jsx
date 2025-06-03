@@ -11,7 +11,7 @@ import github from "../../../public/github.svg";
 import vscode from "../../../public/vscode.svg";
 import vite from "../../../public/vite.png";
 import ToolsComponent from "./ToolsComponent";
-import Ts from "../../../public/TypescriptLogo.svg";
+import Ts from "../../../public/typescriptlogo.svg";
 
 const Tools = () => {
   return (
