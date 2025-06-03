@@ -6,6 +6,8 @@ const ToolsComponent = ({ image, name }) => {
       <Image
         src={image}
         alt="tool"
+        width={130}
+        height={130}
         className="h-full w-full items-center p-6  justify-center  "
       />
       <p className=" inter-font font-light text-[13px] text-center pb-2 ">
