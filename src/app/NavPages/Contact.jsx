@@ -10,7 +10,7 @@ const ContactInfo = [
   {
     icons: <MdOutlineMail className="w-8 h-8" />,
     name: "Email",
-    link: "mailto:dadesuwaaiwerioghene12@gmail.com",
+    link: "mailto:adesuwaaiwerioghene12@gmail.com",
     linkName: "adesuwaaiwerioghene12@gmail.com",
   },
   {
