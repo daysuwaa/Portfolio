@@ -23,6 +23,7 @@ const Home = () => {
             backSpeed={40}
             loop
           />
+          <div className="floating-element"></div>
         </div>
 
         {/* <div

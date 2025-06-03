@@ -70,25 +70,25 @@ export default function RootLayout({ children }) {
           {children}
         </body>
       </head>
-      <div
+      {/* <div
         style={{
           position: "fixed",
           zIndex: 2147483647,
           pointerEvents: "none",
           touchAction: "none",
         }}
-      >
-        <issueiq-bubble
+      > */}
+      {/* <issueiq-bubble
           sender-text-color="#000000"
           bot-text-color="#ADD8E6"
           chatbot-id="033ab3f7-608e-4f40-a38c-3a4aead8da49"
           style={{ pointerEvents: "auto" }}
-        ></issueiq-bubble>
-      </div>
-      <script
+        ></issueiq-bubble> */}
+      {/* </div> */}
+      {/* <script
         defer
         src="https://cdn.jsdelivr.net/npm/issueiq@0.2.2/dist/loader.js"
-      ></script>
+      ></script> */}
     </html>
   );
 }

@@ -10,6 +10,7 @@ import vans from "../../../public/projects/vans.png";
 import { FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const ProjectsDisplay = ({
   imageSrc,
@@ -20,34 +21,43 @@ const ProjectsDisplay = ({
   isMain,
 }) => {
   return (
-    <div
-      className={`  transition-transform ${
-        isMain ? "scale-100 opacity-100" : "scale-75 hover:scale-90 opacity-50"
-      } duration-500 transform hover:scale-105 hover:opacity-100 bg-gray-50 dark:bg-[#0a0a0a] h-full shadow-lg shadow-[#272727] rounded-md`}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{ once: false }}
     >
-      <Image src={imageSrc} alt={`${title} image`} />
-      <div className="p-2">
-        <h1 className="text-[20px] roboto-font text-center font-medium">
-          {title}
-        </h1>
-        <hr className="w-12 mx-auto bg-fuchsia-500 h-[2px]"></hr>
+      <div
+        className={`  transition-transform ${
+          isMain
+            ? "scale-100 opacity-100"
+            : "scale-75 hover:scale-90 opacity-50"
+        } duration-500 transform hover:scale-105 hover:opacity-100 bg-gray-50 dark:bg-[#0a0a0a] h-full shadow-lg shadow-[#272727] rounded-md`}
+      >
+        <Image src={imageSrc} alt={`${title} image`} />
+        <div className="p-2">
+          <h1 className="text-[20px] roboto-font text-center font-medium">
+            {title}
+          </h1>
+          <hr className="w-12 mx-auto bg-fuchsia-500 h-[2px]"></hr>
 
-        <p className="text-[12px] inter-font mt-2 leading-5 text-center dark:text-gray-300 font-inter">
-          {description}
-        </p>
+          <p className="text-[12px] inter-font mt-2 leading-5 text-center dark:text-gray-300 font-inter">
+            {description}
+          </p>
 
-        <div className="flex justify-center items-center mx-2 gap-4 my-4">
-          <Link href={linksrc} passHref>
-            <button className=" border-black hover:bg-slate-300  dark:border-none dark:bg-[#232323] bg-slate-200  px-3 py-1.5 border-[0.2px] rounded-md text-[12px]">
-              View Project
-            </button>
-          </Link>
-          <Link href={gitsrc} passHref className="ml-auto">
-            <FaGithub className="w-7 h-7 hover:text-blue-900" />
-          </Link>
+          <div className="flex justify-center items-center mx-2 gap-4 my-4">
+            <Link href={linksrc} passHref>
+              <button className=" border-black hover:bg-slate-300  dark:border-none dark:bg-[#232323] bg-slate-200  px-3 py-1.5 border-[0.2px] rounded-md text-[12px]">
+                View Project
+              </button>
+            </Link>
+            <Link href={gitsrc} passHref className="ml-auto">
+              <FaGithub className="w-7 h-7 hover:text-blue-900" />
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -10,7 +10,7 @@ import vans from "../../../public/projects/vans.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 const ProjectsDisplay = ({
   imageSrc,
   title,
@@ -130,53 +130,60 @@ const Projectssm = () => {
   const currentProject = projectData[currentIndex];
 
   return (
-    <div id="section3" className=" block md:hidden my-[3.5rem]">
-      <div>
-        <h1 className="text-3xl text-center pompiere-font">
-          -{" "}
-          <span className="mx-3 font-inter gradienttext dark:bg-gradient-to-r from-fuchsia-400 to-[#251729]">
-            Projects.
-          </span>
-        </h1>
-        <p className="leading-8 mt-7 text-center text-[13px] font-medium">
-          Below are a selection of completed projects I&apos;ve meticulously
-          crafted from the ground up. They have{" "}
-          <span className="dark:text-fuchsia-300 text-fuchsia-500 ">
-            attractive designs and
-          </span>{" "}
-          easy-to-use layouts. The code is well-organized, making it simple to
-          maintain and reuse. These projects showcase my commitment to
-          <span className="dark:text-fuchsia-300 text-fuchsia-500 ">
-            {" "}
-            responsive design.
-          </span>
-        </p>
-        <div className="flex items-center justify-center mt-7">
-          <button
-            onClick={prevProject}
-            className="p-2.5  bg-slate-200 rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
-          >
-            <FaArrowLeft className="text-fuchsia-500" />
-          </button>
-          <div className="w-full mx-4">
-            <ProjectsDisplay
-              imageSrc={currentProject.imageSrc}
-              title={currentProject.title}
-              description={currentProject.description}
-              technology={currentProject.technology}
-              linksrc={currentProject.linksrc}
-              gitsrc={currentProject.gitsrc}
-            />
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{ once: false }}
+    >
+      <div id="section3" className=" block md:hidden my-[3.5rem]">
+        <div>
+          <h1 className="text-3xl text-center pompiere-font">
+            -{" "}
+            <span className="mx-3 font-inter gradienttext dark:bg-gradient-to-r from-fuchsia-400 to-[#251729]">
+              Projects.
+            </span>
+          </h1>
+          <p className="leading-8 mt-7 text-center text-[13px] font-medium">
+            Below are a selection of completed projects I&apos;ve meticulously
+            crafted from the ground up. They have{" "}
+            <span className="dark:text-fuchsia-300 text-fuchsia-500 ">
+              attractive designs and
+            </span>{" "}
+            easy-to-use layouts. The code is well-organized, making it simple to
+            maintain and reuse. These projects showcase my commitment to
+            <span className="dark:text-fuchsia-300 text-fuchsia-500 ">
+              {" "}
+              responsive design.
+            </span>
+          </p>
+          <div className="flex items-center justify-center mt-7">
+            <button
+              onClick={prevProject}
+              className="p-2.5  bg-slate-200 rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
+            >
+              <FaArrowLeft className="text-fuchsia-500" />
+            </button>
+            <div className="w-full mx-4">
+              <ProjectsDisplay
+                imageSrc={currentProject.imageSrc}
+                title={currentProject.title}
+                description={currentProject.description}
+                technology={currentProject.technology}
+                linksrc={currentProject.linksrc}
+                gitsrc={currentProject.gitsrc}
+              />
+            </div>
+            <button
+              onClick={nextProject}
+              className="p-2.5 bg-slate-200  rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
+            >
+              <FaArrowRight className="text-fuchsia-500" />
+            </button>
           </div>
-          <button
-            onClick={nextProject}
-            className="p-2.5 bg-slate-200  rounded-full hover:bg-gray-400 dark:bg-[#232323] dark:hover:bg-gray-600"
-          >
-            <FaArrowRight className="text-fuchsia-500" />
-          </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
