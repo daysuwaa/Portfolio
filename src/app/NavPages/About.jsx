@@ -47,19 +47,6 @@ const About = () => {
                   Feel free to reach out to me ;)
                 </i>
                 <br></br>
-                {/* <Link href="#section4">
-                <>
-                  <button className="contactmebutton   mt-5  font-medium animate-bounce">
-                    Contact me
-                  </button>
-                </>
-              </Link> */}
-                {/* <Link
-                href={Resume}
-                className="contactmebutton font-medium w-fit mt-[4rem]"
-              >
-                Download Resume
-              </Link> */}
                 <a
                   href="/Aiwerioghene AdesuwaResume (1).pdf"
                   target="_blank"
