@@ -61,7 +61,7 @@ const About = () => {
                 Download Resume
               </Link> */}
                 <a
-                  href="/AdesuwaResume1.pdf"
+                  href="/Aiwerioghene AdesuwaResume (1).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contactmebutton mt-5 font-medium animate-bounce"
