@@ -1,40 +1,27 @@
+"use client";
 import {
-  Zeyada,
-  Comic_Neue,
   Pompiere,
   Roboto_Condensed,
   Inter,
   Sacramento,
-  Oswald,
   Gwendolyn,
 } from "next/font/google";
-
+import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 import "./globals.css";
 
-const zeyada = Zeyada({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--zeyada-font",
-});
-
-const comic = Comic_Neue({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--comic-font",
-});
+// Fonts
 
 const pompiere = Pompiere({
   subsets: ["latin"],
   weight: "400",
   variable: "--pompiere-font",
 });
-
 const gwendolyn = Gwendolyn({
   subsets: ["latin"],
   weight: "400",
   variable: "--gwendolyn-font",
 });
-
 const roboto = Roboto_Condensed({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "700", "800", "900"],
@@ -50,45 +37,61 @@ const sacramento = Sacramento({
   weight: ["400"],
   variable: "--sacramento-font",
 });
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: "200",
-  variable: "--oswald-font",
-});
-
-export const metadata = {
-  title: "adesuwa.xyz",
-};
 
 export default function RootLayout({ children }) {
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleTheme = () => {
+    const nextTheme = isDark ? "light" : "dark";
+    localStorage.setItem("theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    setIsDark(nextTheme === "dark");
+  };
+
+  useEffect(() => {
+    const isDarkNow = document.documentElement.classList.contains("dark");
+    setIsDark(isDarkNow);
+  }, []);
+
   return (
     <html lang="en">
       <head>
-        <body
-          className={`${zeyada.variable} ${comic.variable}  ${pompiere.variable} ${roboto.variable} ${inter.variable} ${gwendolyn.variable} ${sacramento.variable} ${oswald.variable}`}
-        >
-          {children}
-        </body>
+        {/* Prevent FART: apply theme before hydration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const storedTheme = localStorage.getItem('theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
       </head>
-      {/* <div
-        style={{
-          position: "fixed",
-          zIndex: 2147483647,
-          pointerEvents: "none",
-          touchAction: "none",
-        }}
-      > */}
-      {/* <issueiq-bubble
-          sender-text-color="#000000"
-          bot-text-color="#ADD8E6"
-          chatbot-id="033ab3f7-608e-4f40-a38c-3a4aead8da49"
-          style={{ pointerEvents: "auto" }}
-        ></issueiq-bubble> */}
-      {/* </div> */}
-      {/* <script
-        defer
-        src="https://cdn.jsdelivr.net/npm/issueiq@0.2.2/dist/loader.js"
-      ></script> */}
+      <body
+        className={`
+          min-h-screen transition-colors duration-300 bg-[#fefefe] text-black dark:bg-black dark:text-white
+         ${pompiere.variable}
+          ${roboto.variable} ${inter.variable} ${gwendolyn.variable}
+          ${sacramento.variable} 
+        `}
+      >
+        {/* Theme toggle button with icon */}
+        <button
+          onClick={toggleTheme}
+          className="fixed top-4 right-4 p-4 rounded-full shadow-md shadow-slate-300 dark:shadow-gray-700 text-yellow-500  transition"
+          aria-label="Toggle theme"
+        >
+          {isDark ? <Sun size={25} /> : <Moon size={25} />}
+        </button>
+
+        {children}
+      </body>
     </html>
   );
 }
