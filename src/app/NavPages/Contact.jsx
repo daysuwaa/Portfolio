@@ -109,13 +109,13 @@ const Contact = () => {
       <div className="flex flex-col items-ceter justify-center min-h-screen w-full px-4 md:px-12 lg:px-32">
         <div className="text-center mb-6">
           <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
-            Let's Work Together 🚀
+            Let&apos;s Work Together 🚀
           </h2>
           <div className="w-14 h-1 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full"></div>
         </div>
         <p className="text-[14px] lg:text-[16px] inter-font font-medium text-center leading-6">
-          Have a project in mind? I'd love to hear about it. Send me a message
-          and let's create something amazing together!
+          Have a project in mind? I&apos;d love to hear about it. Send me a
+          message and let&apos;s create something amazing together!
           <br></br>
           <i className="text-rose-500  leading-[40px] font-semibold">
             Looking forward to hearing from you!

@@ -22,7 +22,7 @@ const About = () => {
                 <div className="floating-element"></div>
               </h1>
               <div className=" font-light  mt-7 text-[14px] lg:text-[16px] leading-[40px]  inter-font">
-                Hi, I'm Aiwerioghene Adesuwa, but i go by{" "}
+                Hi, I&apos;m Aiwerioghene Adesuwa, but i go by{" "}
                 <span className="text-rose-500  font-bold">Daysuwa</span> on all
                 social media platforms. I am a{" "}
                 <span className="text-rose-500   font-bold">
