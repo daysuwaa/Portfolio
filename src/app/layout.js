@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import "./globals.css";
-
+import { Toaster } from "react-hot-toast";
 // Fonts
 
 const pompiere = Pompiere({
@@ -37,6 +37,11 @@ const sacramento = Sacramento({
   weight: ["400"],
   variable: "--sacramento-font",
 });
+
+const metadata = {
+  title: "Adesuwa A",
+  description: "My Portfolio",
+};
 
 export default function RootLayout({ children }) {
   const [isDark, setIsDark] = useState(false);
@@ -84,12 +89,33 @@ export default function RootLayout({ children }) {
         {/* Theme toggle button with icon */}
         <button
           onClick={toggleTheme}
-          className="fixed top-4 right-4 p-4 rounded-full shadow-md shadow-slate-300 dark:shadow-gray-700 text-yellow-500  transition"
+          className="fixed top-9 right-4 p-2 lg:p-4 rounded-full shadow-md shadow-slate-300 dark:shadow-gray-700 text-yellow-500  transition"
           aria-label="Toggle theme"
         >
           {isDark ? <Sun size={25} /> : <Moon size={25} />}
         </button>
+        <Toaster />
+        {/* @ts-ignore */}
+        <div
+          style={{
+            position: "fixed",
+            zIndex: 2147483647,
+            pointerEvents: "none",
+          }}
+        >
+          <issueiq-bubble
+            sender-text-color="#000000"
+            bot-text-color="#ffffff"
+            chatbot-id="511d736a-6628-4b96-a63e-d8cde5693da8"
+            display-name="Adesuwa Aiwerioghene"
+            style={{ pointerEvents: "auto" }}
+          ></issueiq-bubble>
+        </div>
 
+        <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/issueiq@1.0.0/dist/loader.js"
+        ></script>
         {children}
       </body>
     </html>
