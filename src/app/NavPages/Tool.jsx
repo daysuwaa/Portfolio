@@ -34,7 +34,33 @@ const Tool = () => {
     { name: "Vscode", image: vscode, level: 97 },
   ];
   const [skillsInView, setSkillsInView] = useState(false);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setSkillsInView(true);
+  //       }
+  //     },
+  //     { threshold: 0.2 }
+  //   );
+
+  //   if (skillsRef.current) {
+  //     observer.observe(skillsRef.current);
+  //   }
+
+  //   return () => {
+  //     if (skillsRef.current) {
+  //       observer.unobserve(skillsRef.current);
+  //     }
+  //   };
+  // }, []);
+  // const skillsRef = useRef(null);
+
+  const skillsRef = useRef(null); // ✅ Define it first
+
   useEffect(() => {
+    const target = skillsRef.current; // ✅ store it once
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -44,17 +70,12 @@ const Tool = () => {
       { threshold: 0.2 }
     );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
-    }
+    if (target) observer.observe(target);
 
     return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
-      }
+      if (target) observer.unobserve(target);
     };
   }, []);
-  const skillsRef = useRef(null);
 
   return (
     <div>
