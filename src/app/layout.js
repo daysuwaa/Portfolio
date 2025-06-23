@@ -86,15 +86,6 @@ export default function RootLayout({ children }) {
           ${sacramento.variable} 
         `}
       >
-        {/* Theme toggle button with icon */}
-        <button
-          onClick={toggleTheme}
-          className="fixed top-9 right-4 p-2 lg:p-4 rounded-full shadow-md shadow-slate-300 dark:shadow-gray-700 text-yellow-500  transition"
-          aria-label="Toggle theme"
-        >
-          {isDark ? <Sun size={25} /> : <Moon size={25} />}
-        </button>
-        <Toaster />
         {/* @ts-ignore */}
         <div
           style={{
@@ -105,8 +96,8 @@ export default function RootLayout({ children }) {
         >
           <issueiq-bubble
             sender-text-color="#000000"
-            bot-text-color="#ffffff"
-            chatbot-id="511d736a-6628-4b96-a63e-d8cde5693da8"
+            bot-text-color="#fb7185cc"
+            chatbot-id="8b933d3a-532f-4778-b578-322c8405d85a"
             display-name="Adesuwa Aiwerioghene"
             style={{ pointerEvents: "auto" }}
           ></issueiq-bubble>
@@ -116,6 +107,16 @@ export default function RootLayout({ children }) {
           defer
           src="https://cdn.jsdelivr.net/npm/issueiq@1.0.0/dist/loader.js"
         ></script>
+        {/* Theme toggle button with icon */}
+        <button
+          onClick={toggleTheme}
+          className="fixed top-9 right-4 p-2 lg:p-4 rounded-full shadow-md shadow-slate-300 dark:shadow-gray-700 text-yellow-500  transition"
+          aria-label="Toggle theme"
+        >
+          {isDark ? <Sun size={25} /> : <Moon size={25} />}
+        </button>
+        <Toaster />
+
         {children}
       </body>
     </html>
