@@ -6,6 +6,7 @@ import Projects from "./NavPages/Projects";
 import Contact from "./NavPages/Contact";
 import Projectssm from "./components/Projectssm";
 import Footer from "./components/Footer";
+import Tool from "./NavPages/Tool";
 
 export default function Homee() {
   return (
@@ -14,11 +15,12 @@ export default function Homee() {
       <div className="mx-[1.5rem] sm:mx-[4rem] md:mx-[4rem] lg:mx-[8rem] xl:mx-[10rem]">
         <Home />
         <About />
+        <Tool />
         <Projects />
         <Projectssm />
         <Contact />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
