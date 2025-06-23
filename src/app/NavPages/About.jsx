@@ -1,8 +1,7 @@
 import React from "react";
-import Tools from "../components/Tools";
-import Services from "../components/Services";
-import ScrollTools from "../components/ScrollTools";
 import { motion } from "framer-motion";
+import Bring from "../components/Bring";
+import Funfacts from "../components/Funfacts";
 
 const About = () => {
   return (
@@ -15,52 +14,41 @@ const About = () => {
       <section id="section2">
         <div className=" pt-[6rem] min-h-screen border-t-[0.2px] border-gray-300">
           <div className="grid md:grid-cols-1 text-center items-center">
-            <div>
+            <div className="max-w-6xl text-center mx-auto">
               <div className="floating-element"></div>
-              <h1 className="text-3xl pompiere-font ">
-                -
-                <span className=" mx-3 font-inter gradienttext dark:bg-gradient-to-r  from-fuchsia-400 to-[#251729]">
-                  A bit about Me.
-                </span>
+              <h1 className="text-4xl pompiere-font ">
+                -<span className=" mx-3 font-inter  ">A bit about Me.</span>
+                <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full mt-2"></div>
                 <div className="floating-element"></div>
               </h1>
-              <div className=" font-light leading-7 mt-7 text-[13px]  inter-font">
+              <div className=" font-light  mt-7 text-[14px] lg:text-[16px] leading-[40px]  inter-font">
                 Hi, I&apos;m Aiwerioghene Adesuwa, but i go by{" "}
-                <span className="dark:text-fuchsia-300 text-fuchsia-500  font-bold">
-                  Daysuwa
-                </span>{" "}
-                on all social media platforms. I am a{" "}
-                <span className="dark:text-fuchsia-300 text-fuchsia-500  font-bold">
+                <span className="text-rose-500  font-bold">Daysuwa</span> on all
+                social media platforms. I am a{" "}
+                <span className="text-rose-500   font-bold">
                   Front End Developer
                 </span>{" "}
-                based in Lagos, Nigeria. I specialize in creating attractive and
-                user-friendly web interfaces, focusing on responsive design and
-                clean code.I am Passionate about technology and constantly
-                learning. I am committed to building engaging and efficient
-                digital experiences. I&apos;m a team player, and i always strive
-                to help my team memebers.
+                based in Lagos, Nigeria. I am dedicated to crafting beautiful,
+                responsive, and user-friendly web experiences. With a strong eye
+                for design and a passion for clean, maintainable code, I
+                specialize in bringing interfaces to life. I hold a Bachelor of
+                Science degree in Computer Science at Babcock University and
+                continuously explore new tools, frameworks, and technologies to
+                stay ahead in the evolving tech landscape. Whether working
+                independently or within a team, I am driven by curiosity,
+                creativity, and a commitment to building impactful digital
+                solutions.
                 <br></br>
                 <br></br>
                 <div className="floating-element"></div>
-                <i className="font-semibold">
-                  {" "}
-                  Feel free to reach out to me ;)
-                </i>
                 <br></br>
-                <a
-                  href="/Aiwerioghene AdesuwaResume (1).pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contactmebutton mt-5 font-medium animate-bounce"
-                >
-                  Download Resume
-                </a>
               </div>
             </div>
           </div>
-          <Tools />
-          <ScrollTools />
-          <Services />
+          <div className="grid lg:grid-cols-2 gap-10 mx-auto">
+            <Bring />
+            <Funfacts />
+          </div>
         </div>
       </section>
     </motion.div>
