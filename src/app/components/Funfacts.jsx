@@ -36,14 +36,14 @@ const features = [
       <Music className="text-blue-200 w-6 h-6 group-hover:scale-125 transition-transform duration-300" />
     ),
     title: "I code with Music On",
-    desc: "I stay in the flow with Afrobeats or chill lo-fi playing in the background.",
+    desc: "I love listening to Afrobeats or chill lo-fi playing in the background.",
   },
   {
     icon: (
       <Plane className="text-green-500 w-6 h-6  group-hover:scale-125 transition-transform duration-300" />
     ),
     title: "Travel Is My Reset Button",
-    desc: "Exploring new places and cultures keeps me inspired and refreshed.",
+    desc: "Exploring new places and cultures keeps me refreshed.",
   },
   {
     icon: (
@@ -57,7 +57,7 @@ const features = [
       <MdSportsSoccer className="text-purple-500 w-6 h-6 group-hover:scale-125 transition-transform duration-300 animate-pulse" />
     ),
     title: "Football Fan",
-    desc: "I watch and play footabll (Somtimes). I support the Gunners :)",
+    desc: "I watch and play football (somtimes). I support the Gunners :)",
   },
 ];
 

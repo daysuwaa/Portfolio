@@ -17,7 +17,7 @@ const features = [
       <User className="text-blue-500 w-6 h-6 group-hover:scale-125 transition-transform duration-300" />
     ),
     title: "Team Player",
-    desc: "I thrive in collaborative environments.",
+    desc: "I thrive in collaborative environments and love helping others grow.",
   },
   {
     icon: (
