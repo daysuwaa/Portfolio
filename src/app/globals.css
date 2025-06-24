@@ -153,6 +153,7 @@ section[id] {
   overflow: hidden;
   z-index: 1;
   background-color: transparent;
+  
 }
 
 .contactmebutton:after {

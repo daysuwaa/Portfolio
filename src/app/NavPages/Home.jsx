@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <section
       id="section1"
-      className="relaive min-h-screen flex items-center justify-center text-center"
+      className="relative min-h-screen scroll-mt-24 flex items-center justify-center text-center"
     >
-      {/* Background Pulsing Bubbles */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      {/* Background Pulsing Bubbles - Behind text */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute top-10 left-10 w-20 h-20 bg-rose-300 rounded-full opacity-60 animate-pulse float-slow delay-1"></div>
         <div className="absolute top-32 right-20 w-16 h-16 bg-blue-400 rounded-full opacity-40 animate-pulse float-slow delay-2"></div>
         <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-emerald-500 rounded-full opacity-50 animate-pulse float-slow delay-4"></div>
@@ -19,14 +19,14 @@ const Home = () => {
         <div className="absolute top-1/2 left-10 w-8 h-8 bg-amber-300 rounded-full opacity-70 animate-pulse float-slow delay-3"></div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center max-w-4xl px-4">
+      {/* Main Content - Now in normal document flow */}
+      <div className="flex flex-col items-center justify-center px-4">
         <p className="text-gray-400">
           <b className="block bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent sacramento-font text-5xl">
             Hi, I am
           </b>
         </p>
-        <p className="text-4xl lg:text-7xl font-semibold uppercase  roboto-font mt-5">
+        <p className="text-4xl lg:text-7xl font-semibold uppercase roboto-font mt-5">
           Aiwerioghene Adesuwa
         </p>
         {/* Typing Animation */}
@@ -48,11 +48,11 @@ const Home = () => {
         </p>
         {/* Buttons */}
         <div className="lg:flex gap-4 mt-12 lg:mt-24">
-          <Link href="#section5">
+          <a href="#section5">
             <button className="contactmebutton rounded-full dark:shadow-md shadow-md shadow-pink-400 dark:text-white dark:shadow-[#4d4d4d] px-10 lg:px-14 py-4 font-medium mb-6 lg:mb-0">
               📞 Contact Me
             </button>
-          </Link>
+          </a>
           <a
             href="/Aiwerioghene AdesuwaResume (1).pdf"
             target="_blank"
