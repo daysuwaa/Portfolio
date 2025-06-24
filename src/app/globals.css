@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  
+}
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+section[id] {
+  scroll-margin-top: 20px; 
+}
 
 .textshadow {
   color: #fff;
@@ -104,6 +116,7 @@
   padding: 15px 0px;
   display: inline-block;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
@@ -111,7 +124,7 @@
 }
 
 .nav-link::before {
-  transition: 300ms;
+  transition: width 300ms ease, background-color 300ms ease;
   height: 5px;
   content: "";
   position: absolute;
@@ -130,11 +143,6 @@
 
 .nav-link-ltr:hover::before {
   width: 100%;
-}
-
-
-#section2 {
-  animation: 1s ease-out 0s 1 slideInLeft;
 }
 
 .contactmebutton {
@@ -227,8 +235,7 @@
   width: 100%;
 }
 
-
-
+/* project pbutton */
 .projectbutton {
   display: inline-block;
   color: #fff;

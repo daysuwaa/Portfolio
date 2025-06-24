@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={`
-          min-h-screen transition-colors duration-300 bg-[#fefefe] text-black dark:bg-black dark:text-white
+          min-h-screen transition-colors duration-300 bg-[#fefefe] text-black dark:bg-black dark:text-white scroll-smooth
          ${pompiere.variable}
           ${roboto.variable} ${inter.variable} ${gwendolyn.variable}
           ${sacramento.variable} 
