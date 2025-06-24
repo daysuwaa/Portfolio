@@ -82,7 +82,7 @@ const Stats = () => {
     <div>
       <div
         ref={statsRef}
-        className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-5xl mx-auto my-24"
+        className="grid grid-cols-2 md:grid-cols-4 gap-10 mx-auto my-24"
       >
         {funFacts.map((fact, index) => (
           <div

@@ -106,7 +106,7 @@ const Contact = () => {
   };
   return (
     <section id="section5">
-      <div className="flex flex-col items-ceter justify-center min-h-screen w-full px-4 md:px-12 lg:px-32">
+      <div className="flex flex-col items-ceter justify-center min-h-screen w-full">
         <div className="text-center mb-6">
           <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
             Let&apos;s Work Together 🚀
@@ -152,7 +152,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
             action="https://formspree.io/f/xwpbrobj"
             method="POST"
-            className="w-full rounded-xl shadow-lg dark:shadow-lg  bg-gradient-to-tr from-white via-gray-50 to-white dark:from-black dark:via-[#1c1c1c] dark:to-black text-black dark:text-white transition-colors duration-500 p-5"
+            className="w-fll rounded-xl shadow-lg dark:shadow-lg  bg-gradient-to-tr from-white via-gray-50 to-white dark:from-black dark:via-[#1c1c1c] dark:to-black text-black dark:text-white transition-colors duration-500 p-5"
           >
             <div className="mb-3">
               <label className="mb-10">Full Name</label>

@@ -80,7 +80,7 @@ const Tool = () => {
   return (
     <div>
       <section id="section3" className="py-20 relative z-10 bg-transparent">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
               Skills & Expertise ⚡

@@ -11,10 +11,10 @@ const About = () => {
       transition={{ duration: 0.6, delay: 0.2 }}
       viewport={{ once: false }}
     >
-      <section id="section2">
+      <section id="section2" className="scroll-mt-24">
         <div className=" pt-[6rem] min-h-screen border-t-[0.2px] border-gray-300">
           <div className="grid md:grid-cols-1 text-center items-center">
-            <div className="max-w-6xl text-center mx-auto">
+            <div className=" text-center mx-auto">
               <div className="floating-element"></div>
               <h1 className="text-4xl pompiere-font ">
                 -<span className=" mx-3 font-inter  ">A bit about Me.</span>
