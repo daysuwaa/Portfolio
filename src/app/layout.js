@@ -41,6 +41,9 @@ const sacramento = Sacramento({
 const metadata = {
   title: "Adesuwa A",
   description: "My Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
