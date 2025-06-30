@@ -18,7 +18,7 @@ const Stats = () => {
         projects: 15,
         clients: 12,
         codes: 12000,
-        experience: 4,
+        experience: 3,
       };
 
       Object.keys(targetStats).forEach((key) => {
