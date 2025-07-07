@@ -15,7 +15,7 @@ const Stats = () => {
   useEffect(() => {
     const animateStats = () => {
       const targetStats = {
-        projects: 15,
+        projects: 10,
         clients: 12,
         codes: 12000,
         experience: 3,

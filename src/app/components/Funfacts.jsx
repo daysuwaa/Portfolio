@@ -22,7 +22,7 @@ const features = [
       <Heart className="text-blue-500 w-6 h-6 group-hover:scale-125 transition-transform duration-300" />
     ),
     title: "What I do when I am not coding",
-    desc: "I like to watch movies and sleep when I am not coding",
+    desc: "I like to watch movies, play dress up and sleep ",
   },
   {
     icon: (
@@ -50,7 +50,7 @@ const features = [
       <User className="text-rose-300 w-6 h-6 group-hover:scale-125 transition-transform duration-300" />
     ),
     title: "My Nickname Is Daysuwa",
-    desc: "It is basically the pronounciation of my name, but shorter (AH-DAY-SU-WA)",
+    desc: "It is basically the pronounciation of my name, but without the 'A' (AH-DAY-SU-WA)",
   },
   {
     icon: (

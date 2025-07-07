@@ -24,7 +24,7 @@ const ContactInfo = [
   {
     icons: <MapPin className="w-7 h-7" />,
     bgcolor: "#ffb4e6",
-    link: "",
+    link: "map:lagos, nigeria",
     linkName: "Lagos, Nigeria",
   },
 ];

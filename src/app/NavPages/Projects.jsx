@@ -8,6 +8,7 @@ import bulkpayment from "../../../public/projects/bulkpayment.png";
 import usign from "../../../public/projects/usign.png";
 import uber from "../../../public/projects/uber.png";
 import vans from "../../../public/projects/vans.png";
+import giftloop from "../../../public/projects/Giftloop.png";
 import { FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
@@ -103,16 +104,16 @@ const projectData = [
     gitsrc: "https://github.com/daysuwaa/BulkTransfer-landingpage",
     stack: ["React.js", "Tailwind CSS"],
   },
-  {
-    imageSrc: chevron,
-    title: "Bulk Billerpro Dashboard",
-    description:
-      "Developed a UI featuring a dashboard designed for initiating and managing bulk payments",
+  // {
+  //   imageSrc: chevron,
+  //   title: "Bulk Billerpro Dashboard",
+  //   description:
+  //     "Developed a UI featuring a dashboard designed for initiating and managing bulk payments",
 
-    linksrc: "#",
-    gitsrc: "https://github.com/daysuwaa/Billerpro-dashboard",
-    stack: ["Next.js", "Tailwind CSS", "Recharts", "React Icons"],
-  },
+  //   linksrc: "#",
+  //   gitsrc: "https://github.com/daysuwaa/Billerpro-dashboard",
+  //   stack: ["Next.js", "Tailwind CSS", "Recharts", "React Icons"],
+  // },
   {
     imageSrc: codestash,
     title: "Codestash",
@@ -122,6 +123,16 @@ const projectData = [
     linksrc: "https://codestashh.vercel.app/login",
     gitsrc: "https://github.com/daysuwaa/CodestashFe",
     stack: ["React.js", "Tailwind CSS", "Mongo DB", "Express js"],
+  },
+  {
+    imageSrc: giftloop,
+    title: "Gift Loop",
+    description:
+      "GiftLoop helps you track gift ideas, remember special dates, and always stay thoughtful",
+
+    linksrc: "",
+    gitsrc: "https://github.com/daysuwaa/giftloop",
+    stack: ["Next.js", "Typescript ", "Tailwind CSS", "Framer Motion"],
   },
 
   {

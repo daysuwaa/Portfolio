@@ -12,6 +12,7 @@ import { FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import giftloop from "../../../public/projects/Giftloop.png";
 const ProjectsDisplay = ({
   imageSrc,
   title,
@@ -106,6 +107,17 @@ const projectData = [
     linksrc: "https://codestashh.vercel.app/login",
     gitsrc: "https://github.com/daysuwaa/CodestashFe",
     stack: ["React.js", "Tailwind CSS", "Mongo DB", "Express js"],
+  },
+
+  {
+    imageSrc: giftloop,
+    title: "Gift Loop",
+    description:
+      "GiftLoop helps you track gift ideas, remember special dates, and always stay thoughtful",
+
+    linksrc: "",
+    gitsrc: "https://github.com/daysuwaa/giftloop",
+    stack: ["Next.js", "Typescript ", "Tailwind CSS", "Framer Motion"],
   },
 
   {
