@@ -47,7 +47,7 @@ const ProjectsDisplay = ({
           icon: <FaClock className="w-3 h-3" />,
           text: "In Progress",
           bgColor: "bg-yellow-100 dark:bg-yellow-500",
-          textColor: "text-yellow-600 dark:text-yellow-900",
+          textColor: "text-yellow-600 dark:text-yellow-00",
           borderColor: "border-yellow-200 dark:border-yellow-700",
         };
       default:
@@ -292,7 +292,7 @@ const Projects = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
-              Projects 💻
+              Featured Projects 💻
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full mb-6"></div>
           </div>

@@ -10,6 +10,7 @@ import ThemeToggle from "./ThemeToggle";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import ChatBubble from "./ChatBubble";
+import Head from "next/head";
 // Fonts
 
 const pompiere = Pompiere({
@@ -45,13 +46,27 @@ const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  openGraph: {
+    title: "Adesuwa Aiwerioghene | Front-End Developer",
+    description:
+      "Portfolio of Adesuwa Aiwerioghene — Front-End Developer crafting clean, responsive web experiences with React, Next.js, and Tailwind CSS.",
+    url: "https://www.adesuwa.dev",
+    type: "website",
+    images: [
+      {
+        url: "https://www.adesuwa.dev/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Adesuwa Aiwerioghene Portfolio",
+      },
+    ],
+  },
 };
 export default function RootLayout({ children }) {
   // const [isDark, setIsDark] = useState(false);
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
       <body
         className={`
           min-h-screen bg-[#fefefe] text-black dark:bg-black dark:text-white transition-colors duration-300 scroll-smooth

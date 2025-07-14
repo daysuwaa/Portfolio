@@ -148,98 +148,100 @@ const ProjectsDisplay = ({
     </motion.div>
   );
 };
-
 const projectData = [
   {
     imageSrc: Asos,
-    title: "Asos-clone",
+    title: "Asos Clone",
     description:
-      "A pixel-perfect e-commerce clone featuring modern Ul/UX, responsive design, and interactive shopping experience.",
+      "A pixel-perfect e-commerce clone featuring modern UI/UX, responsive design, and interactive shopping experience with cart functionality and product filtering.",
     linksrc: "https://daysuwaa.github.io/Asos-Clone-/",
     gitsrc: "https://github.com/daysuwaa/Asos-Clone-",
-    stack: ["React.js", "Tailwind CSS"],
+    stack: ["React.js", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    status: "completed",
+    featured: true,
   },
   {
     imageSrc: bank,
-    title: "Bank website",
+    title: "Bank Website",
     description:
-      "This is a website for a banking application, built using React js and Tailwind CSS.",
-
+      "A modern banking application website featuring clean design, responsive layout, and intuitive user interface built with React and Tailwind CSS.",
     linksrc: "https://daysuwaa.github.io/Bank-Website/",
     gitsrc: "https://github.com/daysuwaa/Bank-Website",
-    stack: ["React", "Tailwind CSS"],
+    stack: ["React.js", "Tailwind CSS", "JavaScript"],
+    status: "completed",
   },
   {
     imageSrc: bulkpayment,
-    title: "Bulk payment Landing page",
+    title: "Bulk Payment Landing",
     description:
-      " Development of a landing page, showcasing my expertise in creating visually appealing and user-friendly web interfaces.",
-
+      "A professional landing page showcasing expertise in creating visually appealing and user-friendly web interfaces with modern design principles.",
     linksrc: "https://bulkpayment-landingpage.vercel.app",
     gitsrc: "https://github.com/daysuwaa/BulkTransfer-landingpage",
-    stack: ["React.js", "Tailwind CSS"],
-  },
-  {
-    imageSrc: chevron,
-    title: "Bulk Billerpro Dashboard",
-    description:
-      "Developed a UI featuring a dashboard designed for initiating and managing bulk payments",
-
-    linksrc: "#",
-    gitsrc: "https://github.com/daysuwaa/Billerpro-dashboard",
-    stack: ["Next.js", "Tailwind CSS"],
+    stack: ["React.js", "Tailwind CSS", "Responsive Design"],
+    status: "completed",
   },
   {
     imageSrc: codestash,
-    title: "Codestash",
+    title: "CodeStash",
     description:
-      "a simple tool used to store your code snippets built using the MERN stack",
-
+      "A comprehensive code snippet management tool built with the MERN stack, featuring syntax highlighting, tagging, and search functionality for developers.",
     linksrc: "https://codestashh.vercel.app/login",
     gitsrc: "https://github.com/daysuwaa/CodestashFe",
-    stack: ["React.js", "Tailwind CSS", "Mongo DB", "Express js"],
+    stack: ["React.js", "Tailwind CSS", "MongoDB", "Express.js", "Node.js"],
+    status: "completed",
+    featured: true,
   },
 
   {
-    imageSrc: giftloop,
-    title: "Gift Loop",
+    imageSrc: stockmate,
+    title: "Stock Mate",
     description:
-      "GiftLoop helps you track gift ideas, remember special dates, and always stay thoughtful",
-
+      "A simple, elegant inventory management web app that helps small business owners (like hair vendors or boutique sellers) track their products.",
     linksrc: "",
-    gitsrc: "https://github.com/daysuwaa/giftloop",
-    stack: ["Next.js", "Typescript ", "Tailwind CSS", "Framer Motion"],
-  },
-
-  {
-    imageSrc: uber,
-    title: "Uber",
-    description:
-      "Built an Uber clone, replicating its e-commerce functionality for practice.",
-
-    linksrc: "https://daysuwaa.github.io/Uber-clone/",
-    gitsrc: "https://github.com/daysuwaa/Uber-clone",
-    stack: ["HTML", "CSS", "Bootstrap"],
+    gitsrc: "https://github.com/daysuwaa/stockmate",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    status: "in-progress",
   },
   {
     imageSrc: usign,
     title: "uSign",
     description:
-      " An application that enables users to digitally sign PDF documents by drawing or uploading their signature, visually placing it on the document.",
-
+      "A simple PDF signing app that lets users upload, preview, sign, and download documents without hassle.",
     linksrc: "",
     gitsrc: "https://github.com/Kwurah/usign",
-    stack: ["Typescript", "Tailwind CSS", "Framer motion", "API"],
+    stack: ["TypeScript", "Tailwind CSS", "Framer Motion", "PDF API"],
+    status: "in-progress",
+  },
+
+  {
+    imageSrc: uber,
+    title: "Uber Clone",
+    description:
+      "Built an Uber clone replicating its core functionality and user interface for learning purposes, focusing on responsive design and user experience.",
+    linksrc: "https://daysuwaa.github.io/Uber-clone/",
+    gitsrc: "https://github.com/daysuwaa/Uber-clone",
+    stack: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    status: "completed",
+  },
+  {
+    imageSrc: giftloop,
+    title: "Gift Loop",
+    description:
+      "GiftLoop helps you track gift ideas, remember special dates, and always stay thoughtful with an intuitive interface and reminder system.",
+    linksrc: "",
+    gitsrc: "https://github.com/daysuwaa/giftloop",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    status: "in-progress",
   },
   {
     imageSrc: vans,
-    title: "Vans",
+    title: "Vans Website Clone",
     description:
-      "Replicated the Vans site, duplicating its user interface for self-improvement purposes.",
-
+      "Replicated the Vans official website, duplicating its user interface and design patterns for self-improvement and learning purposes.",
     linksrc: "https://daysuwaa.github.io/Vans-Website-Clone/",
     gitsrc: "https://github.com/daysuwaa/Vans-Website-Clone",
     stack: ["HTML", "CSS", "Bootstrap"],
+    status: "completed",
   },
 ];
 const Projectssm = () => {
@@ -270,7 +272,7 @@ const Projectssm = () => {
         <div>
           <div className="text-center mb-8">
             <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
-               Projects 💻
+              Projects 💻
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full"></div>
           </div>
@@ -295,6 +297,8 @@ const Projectssm = () => {
                 linksrc={currentProject.linksrc}
                 gitsrc={currentProject.gitsrc}
                 stack={currentProject.stack}
+                status={currentProject.status}
+                featured={currentProject.featured}
               />
             </div>
             <button
