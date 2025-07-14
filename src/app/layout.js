@@ -39,13 +39,13 @@ const sacramento = Sacramento({
 });
 
 const metadata = {
-  title: "Adesuwa A",
-  description: "My Portfolio",
+  title: "Adesuwa Aiwerioghene | Front-End Developer",
+  description:
+    "Portfolio of Adesuwa Aiwerioghene — Front-End Developer crafting clean, responsive web experiences with React, Next.js, and Tailwind CSS. Open to collaborations!",
   icons: {
     icon: "/favicon.ico",
   },
 };
-
 export default function RootLayout({ children }) {
   // const [isDark, setIsDark] = useState(false);
 
