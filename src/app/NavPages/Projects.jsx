@@ -38,7 +38,7 @@ const ProjectsDisplay = ({
         return {
           icon: <FaCheckCircle className="w-3 h-3" />,
           text: "Completed",
-          bgColor: "bg-green-100 dark:bg-green-900/30",
+          bgColor: "bg-green-100 dark:bg-green-900",
           textColor: "text-green-600 dark:text-green-400",
           borderColor: "border-green-200 dark:border-green-700",
         };

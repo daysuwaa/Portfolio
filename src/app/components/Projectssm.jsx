@@ -8,11 +8,18 @@ import bulkpayment from "../../../public/projects/bulkpayment.png";
 import usign from "../../../public/projects/usign.png";
 import uber from "../../../public/projects/uber.png";
 import vans from "../../../public/projects/vans.png";
-import { FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import giftloop from "../../../public/projects/Giftloop.png";
+import stockmate from "../../../public/projects/stockmate.png";
+import {
+  FaExternalLinkAlt,
+  FaArrowLeft,
+  FaArrowRight,
+  FaClock,
+  FaCheckCircle,
+} from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import giftloop from "../../../public/projects/Giftloop.png";
 const ProjectsDisplay = ({
   imageSrc,
   title,
@@ -21,40 +28,124 @@ const ProjectsDisplay = ({
   gitsrc,
   isMain,
   stack,
+  featured,
+  status,
 }) => {
-  return (
-    <div className=" duration-500 transform block md:hidden hover:scale-105 hover:shadow-md hover:shadow-black bg-gray-100 dark:bg-[#0a0a0a] h-full border-dashed border-zinc-600 border-[0.2px] p-5 rounded-sm">
-      <Image src={imageSrc} alt={`${title} image`} />
-      <div className="p-2">
-        <h1 className="text-[20px] roboto-font font-medium">{title}</h1>
+  const getStatusConfig = (status) => {
+    switch (status) {
+      case "completed":
+        return {
+          icon: <FaCheckCircle className="w-3 h-3" />,
+          text: "Completed",
+          bgColor: "bg-green-100 dark:bg-green-900",
+          textColor: "text-green-600 dark:text-green-400",
+          borderColor: "border-green-200 dark:border-green-700",
+        };
+      case "in-progress":
+        return {
+          icon: <FaClock className="w-3 h-3" />,
+          text: "In Progress",
+          bgColor: "bg-yellow-100 dark:bg-yellow-900/30",
+          textColor: "text-yellow-600 dark:text-yellow-400",
+          borderColor: "border-yellow-200 dark:border-yellow-700",
+        };
+      default:
+        return {
+          icon: <FaCheckCircle className="w-3 h-3" />,
+          text: "Completed",
+          bgColor: "bg-green-100 dark:bg-green-900/30",
+          textColor: "text-green-600 dark:text-green-400",
+          borderColor: "border-green-200 dark:border-green-700",
+        };
+    }
+  };
+  const statusConfig = getStatusConfig(status);
 
-        <p className="text-[12px] inter-font mt-2 leading-5 t dark:text-gray-300 font-inter">
-          {description}
-        </p>
-        {stack && (
-          <div className="flex flex-wrap gap-2 mt-4">
-            {stack.map((tech, i) => (
-              <span
-                key={i}
-                className="text-[11px] font-medium bg-rose-100 text-rose-600 px-2 py-1 rounded-full dark:bg-[#1f1f1f] dark:text-rose-400"
-              >
-                {tech}
-              </span>
-            ))}
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{ once: false }}
+      className={`relative ${
+        isMain ? "scale-100 opacity-100" : "scale-75 hover:scale-90 opacity-50"
+      } duration-500 transform hover:scale-105 hover:opacity-100`}
+    >
+      <div className="bg-white dark:bg-[#0a0a0a] h-full shadow-xl dark:shadow-[#272727] rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 group">
+        {/* Featured Badge */}
+        {featured && (
+          <div className="absolute top-3 left-3 z-10 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-2 py-1 rounded-full text-[10px] font-medium shadow-lg">
+            Featured
           </div>
         )}
-        <div className="flex justify-center items-center mx-2 gap-4 my-4">
-          <Link href={linksrc} passHref>
-            <button className=" border-black hover:bg-slate-300  dark:border-none dark:bg-[#232323] bg-slate-200  px-3 py-1.5 border-[0.2px] rounded-md text-[12px]">
-              View Project
-            </button>
-          </Link>
-          <Link href={gitsrc} passHref className="ml-auto">
-            <FaGithub className="w-7 h-7 hover:text-blue-900" />
-          </Link>
+
+        {/* Status Badge */}
+        <div
+          className={`absolute top-3 right-3 z-10 flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-medium border ${statusConfig.bgColor} ${statusConfig.textColor} ${statusConfig.borderColor}`}
+        >
+          {statusConfig.icon}
+          <span>{statusConfig.text}</span>
+        </div>
+
+        {/* Image Container */}
+        <div className="relative overflow-hidden">
+          <Image
+            src={imageSrc}
+            alt={`${title} image`}
+            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+
+        {/* Content */}
+        <div className="p-5">
+          <div className="flex items-start justify-between mb-2">
+            <h1 className="text-lg roboto-font font-semibold text-gray-900 dark:text-white group-hover:text-rose-500 transition-colors duration-300">
+              {title}
+            </h1>
+          </div>
+
+          <p className="text-sm inter-font leading-relaxed text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+            {description}
+          </p>
+
+          {/* Tech Stack */}
+          {stack && (
+            <div className="flex flex-wrap gap-1.5 mb-5">
+              {stack.map((tech, i) => (
+                <span
+                  key={i}
+                  className="text-[10px] font-medium bg-gray-100 dark:bg-[#1f1f1f] text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-900/20 dark:hover:text-rose-400 transition-colors duration-200"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Action Buttons */}
+          <div className="grid gap-3">
+            {linksrc && (
+              <Link href={linksrc} target="_blank" rel="noopener noreferrer">
+                <button className="flex items-center gap-2 w-full justify-center  bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <FaExternalLinkAlt className="w-3 h-3" />
+                  Live Demo
+                </button>
+              </Link>
+            )}
+
+            {gitsrc && (
+              <Link href={gitsrc} target="_blank" rel="noopener noreferrer">
+                <button className="flex items-center justify-center w-full gap-2 bg-gray-100 dark:bg-[#232323] hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 border border-gray-200 dark:border-gray-600">
+                  <FaGithub className="w-4 h-4" />
+                  Code
+                </button>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -177,16 +268,17 @@ const Projectssm = () => {
     >
       <div id="section3" className=" block md:hidden my-[3.5rem]">
         <div>
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
-              Projects 📁
+              Featured Projects 💻
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full"></div>
           </div>
-          <p className="leading-8 mt-7 text-[14px] lg:text-[16px] text-center font-medium">
-            A showcase of my recent work, featuring modern{" "}
+          <p className="leading-8  text-[14px] lg:text-[16px] text-center font-medium">
+            A curated showcase of my recent work, featuring modern{" "}
             <span className="text-rose-500">web applications</span> built with
-            cutting-edge technologies and best practices in Ul/UX design.
+            built with cutting-edge technologies and best practices in UI/UX
+            design.
           </p>
           <div className="flex items-center justify-center mt-7">
             <button
