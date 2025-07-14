@@ -1,4 +1,3 @@
-"use client";
 import {
   Pompiere,
   Roboto_Condensed,
@@ -10,7 +9,6 @@ import ThemeToggle from "./ThemeToggle";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import ChatBubble from "./ChatBubble";
-import Head from "next/head";
 // Fonts
 
 const pompiere = Pompiere({
