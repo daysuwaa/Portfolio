@@ -147,12 +147,12 @@ section[id] {
 
 .contactmebutton {
   display: inline-block;
-  color: black;
+  color: white;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background-color: transparent;
+  background-color: #ec4899;
   
 }
 
@@ -175,7 +175,7 @@ section[id] {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #fb7185cc;
+  background-color: #db2777 ;
   transition: all 0.3s;
   border-radius: 4px;
   z-index: -1;
@@ -191,7 +191,7 @@ section[id] {
 
 .downloadbutton {
   display: inline-block;
-  color: black;
+  color: #db2777 ;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
@@ -220,8 +220,8 @@ section[id] {
   height: 100%;
   background-image: linear-gradient(
     to right,
-    rgb(234, 240, 234),
-    rgb(238, 238, 237)
+    #db2777  ,
+    #db2777 
   );
   transition: all 0.3s;
   border-radius: 4px;

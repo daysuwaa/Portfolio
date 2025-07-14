@@ -5,7 +5,7 @@ import { Code, Calendar, Check, Heart, Laptop } from "lucide-react";
 const Stats = () => {
   const [stats, setStats] = useState({
     projects: 0,
-    clients: 0,
+    collaborations: 0,
     codes: 0,
     experience: 0,
   });
@@ -16,7 +16,7 @@ const Stats = () => {
     const animateStats = () => {
       const targetStats = {
         projects: 10,
-        clients: 12,
+        collaborations: 5,
         codes: 12000,
         experience: 3,
       };
@@ -66,8 +66,8 @@ const Stats = () => {
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      label: "Happy Clients",
-      value: stats.clients,
+      label: "Collaborations",
+      value: stats.collaborations,
       color: "text-rose-500",
     },
     {

@@ -41,15 +41,17 @@ const Home = () => {
         </div>
         {/* Bio */}
         <p className="lg:text-2xl mt-6 text-gray-600 dark:text-gray-300 leading-[42px]">
-          Crafting beautiful, responsive web experiences with modern
-          technologies.
-          <br />
-          Based in Lagos, Nigeria 🇳🇬 ✨
+          I craft clean, user-friendly web apps with React, Next.js & Tailwind
+          CSS
+          {/* <br /> */}
+          <p className="mt-3">
+            Open to front-end roles let’s build something great!
+          </p>
         </p>
         {/* Buttons */}
         <div className="lg:flex gap-4 mt-12 lg:mt-24">
           <a href="#section5">
-            <button className="contactmebutton rounded-full bg-gray-800 dark:shadow-md shadow-md shadow-pink-400 dark:text-white dark:shadow-[#4d4d4d] px-10 lg:px-14 py-4 font-medium mb-6 lg:mb-0">
+            <button className="contactmebutton rounded-full  dark:shadow-md shadow-md shadow-pink-400 dark:text-white dark:shadow-[#4d4d4d] px-10 lg:px-14 py-4 font-medium mb-6 lg:mb-0">
               📞 Contact Me
             </button>
           </a>
@@ -57,7 +59,7 @@ const Home = () => {
             href="/Aiwerioghene AdesuwaResume (1).pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="downloadbutton rounded-full dark:bg-rose-500/80 dark:text-black border-black border-2 px-4 lg:px-10 py-4 font-medium"
+            className="downloadbutton rounded-full  dark:text-white border-pink-500 border-2 px-4 lg:px-10 py-4 font-medium"
           >
             ⤵️ Download Resume
           </a>

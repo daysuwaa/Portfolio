@@ -48,6 +48,8 @@ const ContactDisplay = ({
         </p>
         <Link
           href={link}
+          target="_blank"
+          rel="noopener noreferrer"
           className={`font-medium hover:text-rose-700 dark:hover:text-rose-200]`}
         >
           {linkName}
@@ -57,6 +59,8 @@ const ContactDisplay = ({
         {link2 && (
           <Link
             href={link2}
+            rel="noopener noreferrer"
+            target="_blank"
             className="font-medium hover:text-rose-700 dark:hover:text-rose-200"
           >
             {linkName2}

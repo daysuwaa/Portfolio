@@ -22,25 +22,31 @@ const About = () => {
                 <div className="floating-element"></div>
               </h1>
               <div className=" font-light  mt-7 text-[14px] lg:text-[16px] leading-[40px]  inter-font">
-                Hi, I&apos;m Aiwerioghene Adesuwa, but i go by{" "}
-                <span className="text-rose-500  font-bold">Daysuwa</span> on all
-                social media platforms. I am a{" "}
+                Hi, I&apos;m Aiwerioghene Adesuwa, a
                 <span className="text-rose-500   font-bold">
+                  {" "}
                   Front End Developer
                 </span>{" "}
-                based in Lagos, Nigeria. I am dedicated to crafting beautiful,
-                responsive, and user-friendly web experiences. With a strong eye
-                for design and a passion for clean, maintainable code, I
-                specialize in bringing interfaces to life. I hold a Bachelor of
-                Science degree in Computer Science at Babcock University and
-                continuously explore new tools, frameworks, and technologies to
-                stay ahead in the evolving tech landscape. Whether working
-                independently or within a team, I am driven by curiosity,
+                who loves crafting clean, user-friendly web experiences with
+                React, Next.js, and Tailwind CSS. I enjoy solving real-world
+                problems, turning ideas into smooth, responsive interfaces, and
+                constantly exploring better ways to build for the web. I hold a
+                <span className="text-rose-500   font-bold">
+                  {" "}
+                  Bachelor of Science degree in Computer Science from Babcock
+                  University
+                </span>{" "}
+                and love staying ahead in the evolving tech landscape by picking
+                up new tools, frameworks, and technologies. Whether working
+                independently or as part of a team, I’m driven by curiosity,
                 creativity, and a commitment to building impactful digital
                 solutions.
                 <br></br>
+                {/* <p className="font-bold">
+                  I’m open to new front-end opportunities and collaborations,
+                  let’s build something great together!
+                </p> */}
                 <br></br>
-                <div className="floating-element"></div>
                 <br></br>
               </div>
             </div>
