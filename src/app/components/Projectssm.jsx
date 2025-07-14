@@ -45,15 +45,15 @@ const ProjectsDisplay = ({
         return {
           icon: <FaClock className="w-3 h-3" />,
           text: "In Progress",
-          bgColor: "bg-yellow-100 dark:bg-yellow-900/30",
-          textColor: "text-yellow-600 dark:text-yellow-400",
+          bgColor: "bg-yellow-100 dark:bg-yellow-500",
+          textColor: "text-yellow-600 dark:text-yellow-900",
           borderColor: "border-yellow-200 dark:border-yellow-700",
         };
       default:
         return {
           icon: <FaCheckCircle className="w-3 h-3" />,
           text: "Completed",
-          bgColor: "bg-green-100 dark:bg-green-900/30",
+          bgColor: "bg-green-100 dark:bg-green-900",
           textColor: "text-green-600 dark:text-green-400",
           borderColor: "border-green-200 dark:border-green-700",
         };
@@ -270,7 +270,7 @@ const Projectssm = () => {
         <div>
           <div className="text-center mb-8">
             <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
-              Featured Projects 💻
+               Projects 💻
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full"></div>
           </div>
