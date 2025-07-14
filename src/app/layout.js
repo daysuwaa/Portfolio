@@ -39,10 +39,10 @@ const sacramento = Sacramento({
   variable: "--sacramento-font",
 });
 
-const metadata = {
+export const metadata = {
   title: "Adesuwa Aiwerioghene | Front-End Developer",
   description:
-    "Portfolio of Adesuwa Aiwerioghene — Front-End Developer crafting clean, responsive web experiences with React, Next.js, and Tailwind CSS. Open to collaborations!",
+    "Adesuwa Aiwerioghene — Front-End Developer crafting clean, responsive web experiences with React, Next.js, and Tailwind CSS. Open to collaborations!",
   icons: {
     icon: "/favicon.ico",
   },
