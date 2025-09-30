@@ -10,6 +10,8 @@ import uber from "../../../public/projects/uber.png";
 import vans from "../../../public/projects/vans.png";
 import giftloop from "../../../public/projects/Giftloop.png";
 import stockmate from "../../../public/projects/stockmate.png";
+import flowapp from "../../../public/projects/flowapp.png";
+
 import {
   FaExternalLinkAlt,
   FaArrowLeft,
@@ -187,7 +189,7 @@ const projectData = [
     imageSrc: codestash,
     title: "CodeStash",
     description:
-      "A comprehensive code snippet management tool built with the MERN stack, featuring syntax highlighting, tagging, and search functionality for developers.",
+      "A code snippet management tool built with the MERN stack, featuring syntax highlighting, tagging, and search functionality for developers.",
     linksrc: "https://codestashh.vercel.app/login",
     gitsrc: "https://github.com/daysuwaa/CodestashFe",
     stack: ["React.js", "Tailwind CSS", "MongoDB", "Express.js", "Node.js"],
@@ -199,11 +201,20 @@ const projectData = [
     imageSrc: stockmate,
     title: "Stock Mate",
     description:
-      "A simple, elegant inventory management web app that helps small business owners (like hair vendors or boutique sellers) track their products.",
+      "A simple inventory management web app that helps small business owners (like hair vendors or boutique sellers) track their products.(Full stack project)",
     linksrc: "",
     gitsrc: "https://github.com/daysuwaa/stockmate",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    status: "in-progress",
+    linksrc: "https://stockmate-five.vercel.app/",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Prisma",
+      "PostgreSQL",
+      "Redux Toolkit",
+    ],
+    status: "completed",
   },
   {
     imageSrc: usign,
@@ -226,16 +237,16 @@ const projectData = [
     stack: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     status: "completed",
   },
-  {
-    imageSrc: giftloop,
-    title: "Gift Loop",
-    description:
-      "GiftLoop helps you track gift ideas, remember special dates, and always stay thoughtful with an intuitive interface and reminder system.",
-    linksrc: "",
-    gitsrc: "https://github.com/daysuwaa/giftloop",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    status: "in-progress",
-  },
+  // {
+  //   imageSrc: flowapp,
+  //   title: "Flow",
+  //   description:
+  //     "A static dashboard with a responsive layout and reusable UI components, showcasing dashboard design and modern frontend practices.",
+  //   linksrc: "https://flowdashboard-gamma.vercel.app/",
+  //   gitsrc: "https://github.com/daysuwaa/flow",
+  //   stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  //   status: "in-progress",
+  // },
   {
     imageSrc: vans,
     title: "Vans Website Clone",
