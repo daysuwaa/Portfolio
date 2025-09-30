@@ -194,8 +194,8 @@ section[id] {
   color: #db2777 ;
   transition: all 0.3s;
   position: relative;
-  overflow: hidden;
   z-index: 1;
+  overflow: hidden;
   background-color: transparent;
 }
 

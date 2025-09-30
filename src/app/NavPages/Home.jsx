@@ -49,9 +49,9 @@ const Home = () => {
           </p>
         </p>
         {/* Buttons */}
-        <div className="lg:flex gap-4 mt-12 lg:mt-24">
+        <div className="lg:flex space-x-3 mt-12 ">
           <a href="#section5">
-            <button className="contactmebutton rounded-full  dark:shadow-md shadow-md shadow-pink-400 dark:text-white dark:shadow-[#4d4d4d] px-10 lg:px-14 py-4 font-medium mb-6 lg:mb-0">
+            <button className="contactmebutton rounded-full  dark:shadow-md shadow-md shadow-pink-400 dark:text-white dark:shadow-[#4d4d4d] px-12 lg:px-14 py-4 font-medium mb-6 lg:mb-0">
               📞 Contact Me
             </button>
           </a>
@@ -59,9 +59,11 @@ const Home = () => {
             href="/Aiwerioghene AdesuwaResume (1).pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="downloadbutton rounded-full  dark:text-white border-pink-500 border-2 px-4 lg:px-10 py-4 font-medium"
+            download
           >
-            ⤵️ Download Resume
+            <button className="downloadbutton cursor-pointer rounded-full  dark:text-white border-pink-500 border-2 px-5 lg:px-7 font-medium py-4 ">
+              ⤵️ Download Resume
+            </button>
           </a>
         </div>
         <Stats />
