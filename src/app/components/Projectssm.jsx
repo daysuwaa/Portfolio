@@ -193,16 +193,6 @@ const projectData = [
   },
 
   {
-    imageSrc: stockmate,
-    title: "Stock Mate",
-    description:
-      "A simple, elegant inventory management web app that helps small business owners (like hair vendors or boutique sellers) track their products.",
-    linksrc: "",
-    gitsrc: "https://github.com/daysuwaa/stockmate",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    status: "in-progress",
-  },
-  {
     imageSrc: usign,
     title: "uSign",
     description:
@@ -224,15 +214,34 @@ const projectData = [
     status: "completed",
   },
   {
-    imageSrc: giftloop,
-    title: "Gift Loop",
+    imageSrc: stockmate,
+    title: "Stock Mate",
     description:
-      "GiftLoop helps you track gift ideas, remember special dates, and always stay thoughtful with an intuitive interface and reminder system.",
+      "A simple inventory management web app that helps small business owners (like hair vendors or boutique sellers) track their products.(Full stack project)",
     linksrc: "",
-    gitsrc: "https://github.com/daysuwaa/giftloop",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    status: "in-progress",
+    gitsrc: "https://github.com/daysuwaa/stockmate",
+    linksrc: "https://stockmate-five.vercel.app/",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Prisma",
+      "PostgreSQL",
+      "Redux Toolkit",
+    ],
+    status: "completed",
   },
+  // {
+  //   imageSrc: flowapp,
+  //   title: "Flow",
+  //   description:
+  //     "A static dashboard with a responsive layout and reusable UI components, showcasing dashboard design and modern frontend practices.",
+  //   linksrc: "https://flowdashboard-gamma.vercel.app/",
+  //   gitsrc: "https://github.com/daysuwaa/flow",
+  //   stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  //   status: "in-progress",
+  // },
   {
     imageSrc: vans,
     title: "Vans Website Clone",

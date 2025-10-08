@@ -49,7 +49,7 @@ const Home = () => {
           </p>
         </p>
         {/* Buttons */}
-        <div className="lg:flex space-x-3 mt-12 ">
+        <div className="lg:flex lg:space-x-3 mt-12 ">
           <a href="#section5">
             <button className="contactmebutton rounded-full  dark:shadow-md shadow-md shadow-pink-400 dark:text-white dark:shadow-[#4d4d4d] px-12 lg:px-14 py-4 font-medium mb-6 lg:mb-0">
               📞 Contact Me
