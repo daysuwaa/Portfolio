@@ -11,6 +11,7 @@ import vans from "../../../public/projects/vans.png";
 import giftloop from "../../../public/projects/Giftloop.png";
 import stockmate from "../../../public/projects/stockmate.png";
 import flowapp from "../../../public/projects/flowapp.png";
+import momento from "../../../public/projects/momento.png";
 
 import {
   FaExternalLinkAlt,
@@ -215,6 +216,25 @@ const projectData = [
       "Redux Toolkit",
     ],
     status: "completed",
+  },
+  {
+    imageSrc: momento,
+    title: "Momento fka Nextstep",
+    description:
+      "Momemento is a personal journaling app for users to record and manage their daily thoughts and experiences.",
+    linksrc: "",
+    gitsrc: "https://github.com/daysuwaa/momento_fe",
+    stack: [
+      "TypeScript",
+      "NextJS",
+      "Tailwind CSS",
+      ".Net",
+      "Entity Framework",
+      "Minimal API",
+      "REST API",
+      "PostgreSql",
+    ],
+    status: "in-progress",
   },
   {
     imageSrc: usign,

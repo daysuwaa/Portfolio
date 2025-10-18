@@ -9,6 +9,7 @@ import usign from "../../../public/projects/usign.png";
 import uber from "../../../public/projects/uber.png";
 import vans from "../../../public/projects/vans.png";
 import giftloop from "../../../public/projects/Giftloop.png";
+import momento from "../../../public/projects/momento.png";
 import stockmate from "../../../public/projects/stockmate.png";
 import {
   FaExternalLinkAlt,
@@ -192,6 +193,25 @@ const projectData = [
     featured: true,
   },
 
+  {
+    imageSrc: momento,
+    title: "Momento fka Nextstep",
+    description:
+      "Momemento is a personal journaling app for users to record and manage their daily thoughts and experiences.",
+    linksrc: "",
+    gitsrc: "https://github.com/daysuwaa/momento_fe",
+    stack: [
+      "TypeScript",
+      "NextJS",
+      "Tailwind CSS",
+      ".Net",
+      "Entity Framework",
+      "Minimal API",
+      "REST API",
+      "PostgreSql",
+    ],
+    status: "in-progress",
+  },
   {
     imageSrc: usign,
     title: "uSign",
