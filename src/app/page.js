@@ -1,12 +1,12 @@
 "use client";
 import Navbar from "./components/Navbar";
-import Home from "./NavPages/Home";
-import About from "./NavPages/About";
-import Projects from "./NavPages/Projects";
-import Contact from "./NavPages/Contact";
-import Projectssm from "./components/Projectssm";
-import Footer from "./components/Footer";
-import Tool from "./NavPages/Tool";
+import Home from "./Sections/Home";
+import About from "./Sections/AboutMe/About";
+import Projects from "./Sections/Project/Projects";
+import Contact from "./Sections/Contact";
+import Projectssm from "./Sections/Project/Projectssm";
+import Footer from "./components/Footer/Footer";
+import Tool from "./Sections/Tool";
 import { motion, useScroll } from "motion/react";
 
 export default function Homee() {

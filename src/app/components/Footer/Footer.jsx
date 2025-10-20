@@ -4,7 +4,7 @@ import { MdOutlineMail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { Map, MapPin, X } from "lucide-react";
-import Contactme from "../components/Contactme";
+import Contactme from "./Contactme";
 const Footer = () => {
   return (
     <div className="my-6">

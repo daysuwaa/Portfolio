@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Bring from "../components/Bring";
-import Funfacts from "../components/Funfacts";
+import Bring from "../AboutMe/components/WhatIBring";
+import Funfacts from "../AboutMe/components/Funfacts";
 
 const About = () => {
   return (

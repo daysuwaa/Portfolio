@@ -1,16 +1,18 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import Asos from "../../../public/projects/asos.png";
-import bank from "../../../public/projects/bank.png";
-import chevron from "../../../public/projects/chevron.png";
-import codestash from "../../../public/projects/codestash.png";
-import bulkpayment from "../../../public/projects/bulkpayment.png";
-import usign from "../../../public/projects/usign.png";
-import uber from "../../../public/projects/uber.png";
-import vans from "../../../public/projects/vans.png";
-import giftloop from "../../../public/projects/Giftloop.png";
-import momento from "../../../public/projects/momento.png";
-import stockmate from "../../../public/projects/stockmate.png";
+import Asos from "../../../../public/projects/asos.png";
+import bank from "../../../../public/projects/bank.png";
+import chevron from "../../../../public/projects/chevron.png";
+import codestash from "../../../../public/projects/codestash.png";
+import bulkpayment from "../../../../public/projects/bulkpayment.png";
+import usign from "../../../../public/projects/usign.png";
+import uber from "../../../../public/projects/uber.png";
+import vans from "../../../../public/projects/vans.png";
+import giftloop from "../../../../public/projects/Giftloop.png";
+import stockmate from "../../../../public/projects/stockmate.png";
+import flowapp from "../../../../public/projects/flowapp.png";
+import momento from "../../../../public/projects/momento.png";
+
 import {
   FaExternalLinkAlt,
   FaArrowLeft,

@@ -1,17 +1,18 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import Asos from "../../../public/projects/asos.png";
-import bank from "../../../public/projects/bank.png";
-import chevron from "../../../public/projects/chevron.png";
-import codestash from "../../../public/projects/codestash.png";
-import bulkpayment from "../../../public/projects/bulkpayment.png";
-import usign from "../../../public/projects/usign.png";
-import uber from "../../../public/projects/uber.png";
-import vans from "../../../public/projects/vans.png";
-import giftloop from "../../../public/projects/Giftloop.png";
-import stockmate from "../../../public/projects/stockmate.png";
-import flowapp from "../../../public/projects/flowapp.png";
-import momento from "../../../public/projects/momento.png";
+import Asos from "../../../../public/projects/asos.png";
+import bank from "../../../../public/projects/bank.png";
+import chevron from "../../../../public/projects/chevron.png";
+import codestash from "../../../../public/projects/codestash.png";
+import bulkpayment from "../../../../public/projects/bulkpayment.png";
+import usign from "../../../../public/projects/usign.png";
+import uber from "../../../../public/projects/uber.png";
+import vans from "../../../../public/projects/vans.png";
+import giftloop from "../../../../public/projects/Giftloop.png";
+import stockmate from "../../../../public/projects/stockmate.png";
+import flowapp from "../../../../public/projects/flowapp.png";
+import momento from "../../../../public/projects/momento.png";
+import ServicesComponent from "@/app/Sections/Project/StackComponent";
 
 import {
   FaExternalLinkAlt,
@@ -116,20 +117,13 @@ const ProjectsDisplay = ({
 
           {/* Tech Stack */}
           {stack && (
-            <div className="flex flex-wrap gap-1.5 mb-5">
-              {stack.map((tech, i) => (
-                <span
-                  key={i}
-                  className="text-[10px] font-medium bg-gray-100 dark:bg-[#1f1f1f] text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-900/20 dark:hover:text-rose-400 transition-colors duration-200"
-                >
-                  {tech}
-                </span>
-              ))}
+            <div className="mb-5">
+              <ServicesComponent stack={stack} />
             </div>
           )}
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center h-[5rem] gap-3">
             {linksrc && (
               <Link href={linksrc} target="_blank" rel="noopener noreferrer">
                 <button className="flex items-center gap-2 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
@@ -224,17 +218,17 @@ const projectData = [
       "Momemento is a personal journaling app for users to record and manage their daily thoughts and experiences.",
     linksrc: "",
     gitsrc: "https://github.com/daysuwaa/momento_fe",
+    linksrc: "https://nextstep-fe.onrender.com/",
     stack: [
       "TypeScript",
-      "NextJS",
+      "Next.js",
       "Tailwind CSS",
       ".Net",
       "Entity Framework",
       "Minimal API",
-      "REST API",
       "PostgreSql",
     ],
-    status: "in-progress",
+    status: "completed",
   },
   {
     imageSrc: usign,
@@ -243,7 +237,7 @@ const projectData = [
       "A simple PDF signing app that lets users upload, preview, sign, and download documents without hassle.",
     linksrc: "",
     gitsrc: "https://github.com/Kwurah/usign",
-    stack: ["TypeScript", "Tailwind CSS", "Framer Motion", "PDF API"],
+    stack: ["TypeScript", "Tailwind CSS", "Framer Motion", "FastApi"],
     status: "in-progress",
   },
 
@@ -390,7 +384,7 @@ const Projects = () => {
 
           {/* Projects Display */}
           <div className="flex gap-8 justify-center items-center">
-            <div className="w-80">
+            <div className="w-[19rem]">
               <ProjectsDisplay
                 key={`prev-${
                   (currentIndex - 1 + projectData.length) % projectData.length
@@ -407,8 +401,9 @@ const Projects = () => {
               />
             </div>
 
-            <div className="w-96">
+            <div className="w-[19rem]">
               <ProjectsDisplay
+                className="max-h-[5rem]"
                 key={`main-${currentIndex}`}
                 imageSrc={mainProject.imageSrc}
                 title={mainProject.title}
@@ -422,7 +417,7 @@ const Projects = () => {
               />
             </div>
 
-            <div className="w-80">
+            <div className="w-[19rem]">
               <ProjectsDisplay
                 key={`next-${(currentIndex + 1) % projectData.length}`}
                 imageSrc={nextProject.imageSrc}
