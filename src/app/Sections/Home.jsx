@@ -1,75 +1,118 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import { ReactTyped as Typed } from "react-typed";
-import Stats from "../components/Stats";
+const facts = [
+  ["Name", "Adesuwa Aiwerioghene (Daysuwa)"],
+  ["Role", "Software engineer"],
+  ["Based in", "Lagos, Nigeria"],
+  ["Availability", "Open to remote engineering roles"],
+];
 
-const Home = () => {
+const claims = [
+  {
+    claim: "I ship a product end to end.",
+    evidence: "Billio has sign-up, sync across devices, daily reminder emails and Gmail import, and it is live with testers.",
+    href: "#work",
+    linkText: "See Billio",
+  },
+  {
+    claim: "I build tools for finance and risk teams.",
+    evidence: "At Deloitte I built an IFRS expense allocation platform and a project tracker, and worked on a risk control self-assessment platform.",
+    href: "#experience",
+    linkText: "See the roles",
+  },
+  {
+    claim: "I lead engineers and still write the code.",
+    evidence: "Acting Engineering Lead at Kachex since October 2026, with frontend work still on my plate.",
+    href: "#experience",
+    linkText: "See the roles",
+  },
+  {
+    claim: "I explain technical work to the people who sign it off.",
+    evidence: "I send a weekly engineering report to Kachex's CEO and have run staff training on generative AI at work.",
+    href: "#about",
+    linkText: "Read more",
+  },
+];
+
+const Tick = ({ i }) => (
+  <svg
+    className="tick mt-1 shrink-0"
+    style={{ "--i": i }}
+    viewBox="0 0 24 24"
+    width="22"
+    height="22"
+    fill="none"
+    stroke="var(--pen)"
+    strokeWidth="2.4"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M4 13l5 5L20 6" />
+  </svg>
+);
+
+export default function Home() {
   return (
-    <section
-      id="section1"
-      className="relative min-h-screen scroll-mt-24 flex items-center justify-center text-center"
-    >
-      {/* Background Pulsing Bubbles - Behind text */}
-      <div className="fixed inset-0 -z-10 pointer-events-none">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-rose-300 rounded-full opacity-60 animate-pulse float-slow delay-1"></div>
-        <div className="absolute top-32 right-20 w-16 h-16 bg-blue-400 rounded-full opacity-40 animate-pulse float-slow delay-2"></div>
-        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-emerald-500 rounded-full opacity-50 animate-pulse float-slow delay-4"></div>
-        <div className="absolute bottom-32 right-10 w-12 h-12 bg-purple-600 rounded-full opacity-60 animate-pulse float-slow delay-1"></div>
-        <div className="absolute top-1/2 left-10 w-8 h-8 bg-amber-300 rounded-full opacity-70 animate-pulse float-slow delay-3"></div>
+    <section id="top" className="pb-8 pt-10 sm:pt-14">
+      <dl className="grid grid-cols-1 border-y border-rule sm:grid-cols-2 lg:grid-cols-4">
+        {facts.map(([k, v], i) => (
+          <div
+            key={k}
+            className={`py-3.5 sm:px-4 ${i % 2 === 1 ? "sm:border-l sm:border-rule" : ""} ${
+              i > 0 ? "lg:border-l lg:border-rule" : "lg:pl-0"
+            } ${i === 0 ? "sm:pl-0" : ""} ${i > 1 ? "border-t border-rule lg:border-t-0" : ""}`}
+          >
+            <dt className="text-sm text-mute">{k}</dt>
+            <dd className="mt-0.5 font-medium">{v}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h1 className="mt-14 max-w-[15ch] font-display text-[clamp(2.75rem,8vw,5.75rem)] font-semibold leading-[0.96] tracking-tight sm:mt-20">
+        I build software for finance and risk teams.
+      </h1>
+      <p className="mt-7 max-w-[58ch] text-[1.125rem] leading-relaxed text-mute">
+        I started in technology assurance at Deloitte, then moved into building the software
+        myself. I write the code and I can explain it to the people who have to approve it.
+      </p>
+      <div className="mt-9 flex flex-wrap gap-3">
+        <a
+          href={encodeURI("/Aiwerioghene AdesuwaResume (1).pdf")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-[4px] bg-ink px-5 py-3 font-medium text-paper hover:opacity-90"
+        >
+          Download resume
+        </a>
+        <a
+          href="mailto:adesuwaaiwerioghene12@gmail.com"
+          className="rounded-[4px] border border-rule px-5 py-3 font-medium hover:border-ink"
+        >
+          Email me
+        </a>
       </div>
 
-      {/* Main Content - Now in normal document flow */}
-      <div className="flex flex-col items-center justify-center px-4">
-        <p className="text-gray-400">
-          <b className="block bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent sacramento-font text-5xl">
-            Hi, I am
-          </b>
-        </p>
-        <p className="text-4xl lg:text-7xl font-semibold uppercase roboto-font mt-5">
-          Aiwerioghene Adesuwa
-        </p>
-        {/* Typing Animation */}
-        <div className="my-6">
-          <Typed
-            className="text-3xl font-normal roboto-font block bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent"
-            strings={["Front End Developer", "Welcome to my Portfolio :)"]}
-            typeSpeed={80}
-            backSpeed={40}
-            loop
-          />
-        </div>
-        {/* Bio */}
-        <p className="lg:text-2xl mt-6 text-gray-600 dark:text-gray-300 leading-[42px]">
-          I craft clean, user-friendly web apps with React, Next.js & Tailwind
-          CSS
-          {/* <br /> */}
-          <p className="mt-3">
-            Open to front-end roles let’s build something great!
-          </p>
-        </p>
-        {/* Buttons */}
-        <div className="lg:flex lg:space-x-3 mt-12 ">
-          <a href="#section5">
-            <button className="contactmebutton rounded-full  dark:shadow-md shadow-md shadow-pink-400 dark:text-white dark:shadow-[#4d4d4d] px-12 lg:px-14 py-4 font-medium mb-6 lg:mb-0">
-              📞 Contact Me
-            </button>
-          </a>
-          <a
-            href="/Aiwerioghene AdesuwaResume (1).pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-          >
-            <button className="downloadbutton cursor-pointer rounded-full  dark:text-white border-pink-500 border-2 px-5 lg:px-7 font-medium py-4 ">
-              ⤵️ Download Resume
-            </button>
-          </a>
-        </div>
-        <Stats />
+      <div className="mt-24">
+        <h2 className="font-display text-[1.75rem] font-semibold tracking-tight text-balance">
+          What I claim, and what backs it up
+        </h2>
+        <ul className="mt-6 border-t border-rule">
+          {claims.map((c, i) => (
+            <li
+              key={c.claim}
+              className="grid grid-cols-[22px_1fr] gap-x-4 gap-y-1.5 border-b border-rule py-5 md:grid-cols-[22px_minmax(0,5fr)_minmax(0,6fr)] md:gap-x-6"
+            >
+              <Tick i={i} />
+              <p className="text-[1.125rem] font-medium leading-snug">{c.claim}</p>
+              <p className="col-start-2 text-mute md:col-start-3">
+                {c.evidence}{" "}
+                <a href={c.href} className="link text-ink">
+                  {c.linkText}
+                </a>
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
-};
-
-export default Home;
+}
