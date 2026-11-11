@@ -1,35 +1,27 @@
-"use client";
 import Navbar from "./components/Navbar";
-import Home from "./Sections/Home";
-import About from "./Sections/AboutMe/About";
-import Projects from "./Sections/Project/Projects";
-import Contact from "./Sections/Contact";
-import Projectssm from "./Sections/Project/Projectssm";
-import Footer from "./components/Footer/Footer";
+import HeroV2 from "./v2/HeroV2";
+import WorkV2 from "./v2/WorkV2";
+import Writing from "./Sections/Writing";
+import Experience from "./Sections/Experience";
 import Tool from "./Sections/Tool";
-import { motion, useScroll } from "motion/react";
+import About from "./Sections/AboutMe/About";
+import Contact from "./Sections/Contact";
+import Footer from "./components/Footer/Footer";
 
-export default function Homee() {
-  const { scrollYProgress } = useScroll();
+export default function Page() {
   return (
-    <div>
+    <>
       <Navbar />
-      {/* <motion.div
-        style={{ scaleX: scrollYProgress }}
-        // className="lg:hidden block"
-      > */}
-      <div className="flex justify-center">
-        <div className="w-full px-6 sm:px-12 md:px-12 lg:px-20 xl:px-28 max-w-7xl">
-          <Home />
-          <About />
-          <Tool />
-          <Projects />
-          <Projectssm />
-          <Contact />
-        </div>
-      </div>
+      <main className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <HeroV2 />
+        <WorkV2 />
+        <Writing />
+        <Experience />
+        <Tool />
+        <About />
+        <Contact />
+      </main>
       <Footer />
-      {/* </motion.div> */}
-    </div>
+    </>
   );
 }

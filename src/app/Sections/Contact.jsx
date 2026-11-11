@@ -1,216 +1,104 @@
 "use client";
-import React, { useState } from "react";
-import { CiLinkedin } from "react-icons/ci";
-import { MdOutlineMail } from "react-icons/md";
-import { FaGithub } from "react-icons/fa";
-import Link from "next/link";
-import { Map, MapPin, X } from "lucide-react";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 
-const ContactInfo = [
-  {
-    icons: <MdOutlineMail className="w-8 h-8" />,
-    bgcolor: "#ff9590",
-    link: "mailto:adesuwaaiwerioghene12@gmail.com",
-    linkName: "adesuwaaiwerioghene12@gmail.com",
-  },
-  {
-    icons: <FaGithub className="w-8 h-8" />,
-    bgcolor: "#a1e7cf",
-    link: "https://github.com/daysuwaa",
-    linkName: "daysuwaa",
-  },
-  {
-    icons: <MapPin className="w-7 h-7" />,
-    bgcolor: "#ffb4e6",
-    link: "map:lagos, nigeria",
-    linkName: "Lagos, Nigeria",
-  },
-];
+const ext = { target: "_blank", rel: "noopener noreferrer" };
 
-const ContactDisplay = ({
-  icons,
-  bgcolor,
-  link,
-  linkName,
-  link2,
-  linkName2,
-}) => {
-  return (
-    <div className="inter-font  my-4 md:my-6  font-extralight text-[14px]">
-      <div className="flex items-center gap-[10px] mb-2 ">
-        <p
-          style={{ backgroundColor: bgcolor }}
-          className="p-2 rounded-lg text-white"
-        >
-          {icons}
-        </p>
-        <Link
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`font-medium hover:text-rose-700 dark:hover:text-rose-200]`}
-        >
-          {linkName}
-        </Link>
-      </div>
-      <div className="flex gap-4">
-        {link2 && (
-          <Link
-            href={link2}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="font-medium hover:text-rose-700 dark:hover:text-rose-200"
-          >
-            {linkName2}
-          </Link>
-        )}
-      </div>
-    </div>
-  );
-};
+const field =
+  "mt-1.5 w-full rounded-[4px] border border-rule bg-sheet px-3.5 py-2.5 text-[1rem] placeholder:text-mute focus-visible:border-pen";
 
-const Contact = () => {
-  const [fname, setFname] = useState("");
-  const [emaila, setEmaila] = useState("");
+export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
-
-    setLoading(true);
-    const toastId = toast.loading("Sending message...");
-
+    setSending(true);
+    const id = toast.loading("Sending message");
     emailjs
       .send(
         "service_gs4zw5w",
         "template_pzsa7dm",
-        {
-          name: fname,
-          email: emaila,
-          message: message,
-        },
+        { name, email, message },
         "7N9NF5iWRaVmXltM_"
       )
       .then(() => {
-        toast.success("Message sent!", { id: toastId });
-        setFname("");
-        setEmaila("");
+        toast.success("Message sent", { id });
+        setName("");
+        setEmail("");
         setMessage("");
       })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        toast.error("Something went wrong. Try again.", { id: toastId });
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        toast.error("Message not sent. Check your connection and try again.", { id });
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .finally(() => setSending(false));
   };
+
   return (
-    <section id="section5">
-      <div className="flex flex-col items-ceter justify-center min-h-screen w-full">
-        <div className="text-center mb-6">
-          <h2 className="text-4xl pompiere-font font-inter dark:text-white text-black mb-4">
-            Let&apos;s Work Together 🚀
-          </h2>
-          <div className="w-14 h-1 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full"></div>
+    <section id="contact" className="pt-24">
+      <h2 className="font-display text-[1.75rem] font-semibold tracking-tight">Contact</h2>
+      <div className="mt-6 grid gap-12 border-t border-rule pt-8 lg:grid-cols-[1fr_1.1fr]">
+        <div>
+          <p className="max-w-[40ch] text-[1.125rem] leading-relaxed">
+            I am open to remote engineering roles and contract work. Email is the fastest way to
+            reach me.
+          </p>
+          <dl className="mt-8 divide-y divide-rule border-y border-rule">
+            {[
+              ["Email", "adesuwaaiwerioghene12@gmail.com", "mailto:adesuwaaiwerioghene12@gmail.com"],
+              ["GitHub", "daysuwaa", "https://github.com/daysuwaa"],
+              ["LinkedIn", "Adesuwa Aiwerioghene", "https://www.linkedin.com/in/adesuwa-aiwerioghene-04538b268/"],
+              ["X", "@daysuwaa_a", "https://x.com/daysuwaa_a"],
+              ["Location", "Lagos, Nigeria"],
+            ].map(([k, v, href]) => (
+              <div key={k} className="grid gap-1 py-3.5 sm:grid-cols-[7rem_1fr] sm:gap-6">
+                <dt className="text-mute">{k}</dt>
+                <dd className="break-words">
+                  {href ? (
+                    <a href={href} className="link" {...(href.startsWith("http") ? ext : {})}>
+                      {v}
+                    </a>
+                  ) : (
+                    v
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
-        <p className="text-[14px] lg:text-[16px] inter-font font-medium text-center leading-6">
-          Have a project in mind? I&apos;d love to hear about it. Send me a
-          message and let&apos;s create something amazing together!
-          <br></br>
-          <i className="text-rose-500  leading-[40px] font-semibold">
-            Looking forward to hearing from you!
-          </i>
-        </p>
-        <div className=" grid lg:grid-cols-2 gap-6 mt-10 ">
-          <div className="w-full rounded-xl shadow-lg dark:shadow-lg  bg-gradient-to-tr from-white via-gray-50 to-white dark:from-black dark:via-[#1c1c1c] dark:to-black text-black dark:text-white transition-colors duration-500 p-5">
-            <h1 className="font-semibold text-3xl">Get in Touch ✨</h1>
-            {ContactInfo.map((informations, index) => {
-              return (
-                <ContactDisplay
-                  key={index}
-                  icons={informations.icons}
-                  bgcolor={informations.bgcolor}
-                  link={informations.link}
-                  linkName={informations.linkName}
-                  link2={informations.link2}
-                  linkName2={informations.linkName2}
-                />
-              );
-            })}
-            <h1 className="font-semibold text-2xl mb-4">Follow Me ⚡️ </h1>
-            <div className="flex items-center ">
-              <Link href="https://www.linkedin.com/in/adesuwa-aiwerioghene-04538b268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                <CiLinkedin className=" bg-[#4c8eff] hover:bg-blue-400 text-white h-12 w-12 rounded-lg p-2 mr-4" />
-              </Link>
-              <Link href="https://x.com/daysuwaa_a?s=21&t=rDVI_vsgbDJYyKXnHKavNg">
-                <X className="bg-[#262626] hover:bg-gray-900 h-12 w-12 rounded-lg p-1 text-white" />
-              </Link>
-            </div>
+
+        <form onSubmit={submit} className="space-y-5">
+          <div>
+            <label htmlFor="c-name" className="font-medium">
+              Your name
+            </label>
+            <input id="c-name" required autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} className={field} />
           </div>
-          {/* form */}
-          <form
-            onSubmit={handleSubmit}
-            action="https://formspree.io/f/xwpbrobj"
-            method="POST"
-            className="w-fll rounded-xl shadow-lg dark:shadow-lg  bg-gradient-to-tr from-white via-gray-50 to-white dark:from-black dark:via-[#1c1c1c] dark:to-black text-black dark:text-white transition-colors duration-500 p-5"
+          <div>
+            <label htmlFor="c-email" className="font-medium">
+              Your email
+            </label>
+            <input id="c-email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} className={field} />
+          </div>
+          <div>
+            <label htmlFor="c-msg" className="font-medium">
+              Message
+            </label>
+            <textarea id="c-msg" required rows={6} value={message} onChange={(e) => setMessage(e.target.value)} className={field} />
+          </div>
+          <button
+            type="submit"
+            disabled={sending}
+            className="rounded-[4px] bg-ink px-5 py-3 font-medium text-paper hover:opacity-90 disabled:opacity-50"
           >
-            <div className="mb-3">
-              <label className="mb-10">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                value={fname}
-                onChange={(e) => setFname(e.target.value)}
-                placeholder="Full Name"
-                className="w-full mt-4 p-2.5 lg:p-4 placeholder:text-[14px] text-[14px] bg-[white] border-[#6c6c6c] rounded border focus:outline-none"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="mb-10">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                value={emaila}
-                onChange={(e) => setEmaila(e.target.value)}
-                placeholder="Email Address"
-                className="w-full p-2.5 mt-4 lg:p-4 placeholder:text-[14px] text-[12px] bg-[white] border-[#6c6c6c] rounded border focus:outline-none"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="mb-10">Message</label>
-              <textarea
-                rows={4}
-                id="message"
-                value={message}
-                placeholder=" Tell me about your project"
-                onChange={(e) => setMessage(e.target.value)}
-                className="w-full p-2.5 mt-4 bg-[white] placeholder:text-[14px] text-black text-[14px] border-[#6c6c6c] rounded border focus:outline-none"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className={`w-full p-2.5 lg:p-4 text-[14px] font-semibold text-white rounded-lg transition
-    ${
-      loading
-        ? "bg-gray-400 cursor-not-allowed"
-        : "bg-black hover:bg-[#262626] dark:bg-rose-500/80 dark:hover:bg-rose-400/80"
-    }`}
-            >
-              {loading ? "Sending..." : "Get in Touch"}
-            </button>
-          </form>
-        </div>
+            {sending ? "Sending" : "Send message"}
+          </button>
+        </form>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
