@@ -1,0 +1,29 @@
+import Navbar from "../components/Navbar";
+import HeroV2 from "./HeroV2";
+import WorkV2 from "./WorkV2";
+import Writing from "../Sections/Writing";
+import Experience from "../Sections/Experience";
+import Tool from "../Sections/Tool";
+import About from "../Sections/AboutMe/About";
+import Contact from "../Sections/Contact";
+import Footer from "../components/Footer/Footer";
+
+export const metadata = { title: "Daysuwa (v2 preview)", robots: { index: false } };
+
+export default function PageV2() {
+  return (
+    <>
+      <Navbar />
+      <main className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <HeroV2 />
+        <WorkV2 />
+        <Writing />
+        <Experience />
+        <Tool />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
+}
