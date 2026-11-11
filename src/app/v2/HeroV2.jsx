@@ -1,14 +1,27 @@
 "use client";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { lines, accent } from "./contours";
-import billioPhone from "../../../public/projects/billio-phone.webp";
 
 const small = [
-  { big: "Acting Lead", label: "Engineering at Kachex" },
+  { big: "Full stack", label: "React, Next.js, NestJS, .NET" },
   { big: "10+", label: "projects shipped" },
-  { big: "Deloitte", label: "where I started, in technology assurance" },
+  { big: "2022", label: "building for the web since" },
   { big: "Lagos", label: "open to remote roles" },
+];
+
+const k = (t) => <span className="text-[#9aa2b0]">{t}</span>;
+const key = (t) => <span className="text-[#e8eaee]">{t}</span>;
+const str = (t) => <span className="text-[#ff7aab]">{`"${t}"`}</span>;
+
+const codeLines = [
+  <>{k("const ")}{key("daysuwa")}{k(" = {")}</>,
+  <>{"  "}{key("role")}{k(": ")}{str("Software engineer")}{k(",")}</>,
+    <>{"  "}{key("based")}{k(": ")}{str("Lagos, Nigeria")}{k(",")}</>,
+  <>{"  "}{key("learning")}{k(": ")}{str("ML and AI")}{k(",")}</>,
+  <>{"  "}{key("builds")}{k(": [")}{str("finance tools")}{k(", ")}{str("risk tools")}{k("],")}</>,
+  <>{"  "}{key("stack")}{k(": [")}{str("TypeScript")}{k(", ")}{str("React")}{k(", ")}{str("NestJS")}{k("],")}</>,
+  <>{"  "}{key("openTo")}{k(": ")}{str("remote engineering roles")}{k(",")}</>,
+  <>{k("};")}</>,
 ];
 
 export default function HeroV2() {
@@ -40,11 +53,11 @@ export default function HeroV2() {
           </p>
           <p className="mt-7 font-hand text-[1.7rem] leading-none text-pen">Hi, I&apos;m Daysuwa, a consultant who codes</p>
           <h1 className="mt-2 font-display text-[clamp(2.25rem,4.6vw,3.6rem)] font-bold leading-[1.02] tracking-tight">
-            I build software for finance and risk teams.
+            I build software people actually use.
           </h1>
           <p className="mt-6 max-w-[52ch] text-[1.0625rem] leading-relaxed text-mute">
-            I write the code and I can explain it to the people who have to approve it. I started in
-            technology assurance at Deloitte, then moved into building the software myself.
+            I&apos;m a full-stack engineer in Lagos. I like turning messy, real-world processes into clear
+            products, and I can explain every decision to the people who have to sign it off.
           </p>
         </div>
         <div className="mt-9 flex flex-wrap gap-3">
@@ -62,15 +75,32 @@ export default function HeroV2() {
         </div>
       </motion.div>
 
-      <motion.div {...pop(0.1)} className="relative overflow-hidden rounded-3xl border border-rule bg-sheet lg:col-span-5">
-                <div className="relative flex h-full min-h-[380px] flex-col items-center justify-between px-6 pt-8">
-          <p className="self-start rounded-full border border-rule bg-paper px-3.5 py-1.5 text-sm text-mute">
-            Billio, live now
-          </p>
-          <p className="absolute right-6 top-7 -rotate-3 font-hand text-[1.45rem] leading-none text-pen">
-            tested by real people
-          </p>
-          <Image src={billioPhone} alt="Billio on a phone" priority className="mt-2 h-auto w-[72%] max-w-[340px] translate-y-10 drop-shadow-xl" />
+      <motion.div {...pop(0.1)} className="relative lg:col-span-5 lg:self-center">
+        <p className="absolute -top-8 right-4 z-10 -rotate-3 font-hand text-[1.45rem] leading-none text-pen">
+          this is me, in code
+        </p>
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#11141a] text-[#e8eaee] shadow-[0_24px_60px_-30px_rgba(0,0,0,0.6)]">
+          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+            <span className="ml-3 text-sm text-[#9aa2b0]">daysuwa.ts</span>
+          </div>
+          <pre className="overflow-x-auto px-5 py-5 font-mono text-[0.8rem] leading-[1.75] sm:text-[0.86rem]">
+            <code>
+              {codeLines.map((line, i) => (
+                <motion.span
+                  key={i}
+                  className="block whitespace-pre"
+                  {...(reduce ? {} : { initial: { opacity: 0, x: -6 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.3, delay: 0.5 + i * 0.09 } })}
+                >
+                  <span className="mr-4 inline-block w-4 select-none text-right text-[#5b6270]">{i + 1}</span>
+                  {line}
+                </motion.span>
+              ))}
+              <span className="block"><span className="mr-4 inline-block w-4 select-none text-right text-[#5b6270]">10</span><span className="inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-[#ff5c9a]" /></span>
+            </code>
+          </pre>
         </div>
       </motion.div>
 

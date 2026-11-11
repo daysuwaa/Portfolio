@@ -1,4 +1,5 @@
 "use client";
+import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import billioPhone from "../../../public/projects/billio-phone.webp";
@@ -62,6 +63,19 @@ const earlier = [
 
 export default function WorkV2() {
   const reduce = useReducedMotion();
+  const track = useRef(null);
+  const [slide, setSlide] = useState(0);
+  const onScroll = () => {
+    const el = track.current;
+    if (!el || !el.firstElementChild) return;
+    const step = el.firstElementChild.getBoundingClientRect().width + 16;
+    setSlide(Math.max(0, Math.min(cards.length - 1, Math.round(el.scrollLeft / step))));
+  };
+  const goTo = (i) => {
+    const el = track.current;
+    if (!el || !el.children[i]) return;
+    el.scrollTo({ left: el.children[i].offsetLeft - el.offsetLeft - 20, behavior: reduce ? "auto" : "smooth" });
+  };
   const reveal = (i = 0) =>
     reduce
       ? {}
@@ -95,9 +109,13 @@ export default function WorkV2() {
         </div>
       </motion.article>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-3">
+      <div
+        ref={track}
+        onScroll={onScroll}
+        className="-mx-5 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0"
+      >
         {cards.map((p, i) => (
-          <motion.article key={p.title} {...reveal(i)} className="flex flex-col overflow-hidden rounded-2xl border border-rule bg-sheet transition-colors hover:border-ink">
+          <motion.article key={p.title} {...reveal(i)} className="flex w-[82%] shrink-0 snap-center flex-col md:w-auto md:shrink overflow-hidden rounded-2xl border border-rule bg-sheet transition-colors hover:border-ink">
             <div className="relative aspect-[16/10] bg-paper">
               {p.image ? (
                 <Image src={p.image} alt={`${p.title} screenshot`} fill sizes="(max-width:768px) 100vw, 360px" className="object-cover object-top" />
@@ -120,6 +138,19 @@ export default function WorkV2() {
               </p>
             </div>
           </motion.article>
+        ))}
+      </div>
+      <div className="mt-4 flex justify-center gap-2 md:hidden" role="tablist" aria-label="Project slides">
+        {cards.map((p, i) => (
+          <button
+            key={p.title}
+            type="button"
+            role="tab"
+            aria-selected={slide === i}
+            aria-label={`Show ${p.title}`}
+            onClick={() => goTo(i)}
+            className={`h-2 rounded-full transition-all ${slide === i ? "w-6 bg-ink" : "w-2 bg-rule"}`}
+          />
         ))}
       </div>
 
