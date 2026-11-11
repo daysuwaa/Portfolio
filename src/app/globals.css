@@ -2,360 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --paper: #f4f5f7;
+  --sheet: #ffffff;
+  --ink: #16181d;
+  --mute: #5b6270;
+  --rule: #d5d9e0;
+  --pen: #c8135b;
+  color-scheme: light;
+}
+.dark {
+  --paper: #12151b;
+  --sheet: #181c23;
+  --ink: #e8eaee;
+  --mute: #9aa2b0;
+  --rule: #2a303b;
+  --pen: #ff5c9a;
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
-  
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 section[id] {
-  scroll-margin-top: 20px; 
+  scroll-margin-top: 72px;
 }
-
-.textshadow {
-  color: #fff;
-  -webkit-box-reflect: below;
-  text-shadow: 2px 8px 8px #cccccc;
-  background-clip: text;
-  color: transparent;
-}
-
-/* google fonts */
-.pompiere-font {
-  font-family: var(--pompiere-font);
-}
-.roboto-font {
-  font-family: var(--roboto-font);
-}
-.inter-font {
-  font-family: var(--inter-font);
-}
-.sacramento-font {
-  font-family: var(--sacramento-font);
-}
-.gwendolyn-font {
-  font-family: var(--gwendolyn-font);
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* arrow bounce */
-.bounce {
-  animation: bounce 2s infinite;
-}
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(5px);
-  }
-  60% {
-    transform: translateY(5px);
-  }
-}
-/* gradient text for subheadings */
-.gradienttext {
-  width: 200px;
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 0, 234),
-    rgba(87, 0, 36, 0.95)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* background-image: linear-gradient(to right, rgb(255, 3, 133),rgba(255, 255, 255, 0.95)); */
-}
-
-.gradienttextblack {
-  width: 200px;
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 0, 247),
-    rgba(0, 0, 0, 0.95)
-  );
-}
-/* box shadow for the services  */
-.boxshadow {
-  &:hover {
-    border: 1px solid;
-    box-shadow: 5px 10px;
-  }
-}
-/* scrollling tools */
-::-webkit-scrollbar {
-  height: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #161616;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.navbar {
-  border-bottom: 1px solid #bbbbbb;
-}
-
-.nav-link {
-  padding: 15px 0px;
-  display: inline-block;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  opacity: 1;
-}
-
-.nav-link::before {
-  transition: width 300ms ease, background-color 300ms ease;
-  height: 5px;
-  content: "";
-  position: absolute;
-   background-image: linear-gradient(
-    to right,
-    rgb(161, 8, 95),
-    rgb(236, 72, 236)
-  );
-  
-}
-
-.nav-link-ltr::before {
-  width: 0%;
-  bottom: 10px;
-}
-
-.nav-link-ltr:hover::before {
-  width: 100%;
-}
-
-.contactmebutton {
-  display: inline-block;
-  color: white;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background-color: #ec4899;
-  
-}
-
-.contactmebutton:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  z-index: -2;
-  border-radius: 4px;
-}
-
-.contactmebutton:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: #db2777 ;
-  transition: all 0.3s;
-  border-radius: 4px;
-  z-index: -1;
-}
-
-.contactmebutton:hover {
-  color: #020202;
-}
-
-.contactmebutton:hover:before {
-  width: 100%;
-}
-
-.downloadbutton {
-  display: inline-block;
-  color: #db2777 ;
-  transition: all 0.3s;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  background-color: transparent;
-}
-
-.downloadbutton:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  z-index: -2;
-  border-radius: 4px;
-}
-
-.downloadbutton:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-image: linear-gradient(
-    to right,
-    #db2777  ,
-    #db2777 
-  );
-  transition: all 0.3s;
-  border-radius: 4px;
-  z-index: -1;
-}
-
-.downloadbutton:hover {
-  color: #020202;
-}
-
-.downloadbutton:hover:before {
-  width: 100%;
-}
-
-/* project pbutton */
-.projectbutton {
-  display: inline-block;
-  color: #fff;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background-color: rgb(125, 30, 142);
-}
-
-.projectbutton:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
-
-.projectbutton:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: rgb(7, 4, 7);
-  transition: all 0.3s;
-
-  z-index: -1;
-}
-
-.projectbutton:hover {
+::selection {
+  background: var(--pen);
   color: #fff;
 }
-
-.projectbutton:hover:before {
-  width: 100%;
+:focus-visible {
+  outline: 2px solid var(--pen);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-/* Floating Elements */
-.floating-element {
-position: absolute;
-width: 100px;
-height: 100px;
-border: 1px solid rgba(241, 239, 239, 0.239);
-border-radius: 20px;
-animation: float 6s ease-in-out infinite;
+.bar {
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.floating-element:nth-child(1) {
-top: 20%;
-left: 10%;
-animation-delay: 0s;
+.link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--rule);
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.link:hover {
+  color: var(--pen);
+  text-decoration-color: var(--pen);
 }
 
-.floating-element:nth-child(2) {
-top: 60%;
-right: 10%;
-animation-delay: 2s;
+/* The one orchestrated moment: ticks are drawn in one after another on load. */
+.tick path {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: draw 0.5s ease-out forwards;
+  animation-delay: calc(var(--i) * 0.4s + 0.5s);
 }
-
-.floating-element:nth-child(3) {
-bottom: 20%;
-left: 15%;
-animation-delay: 4s;
-}
-
-@keyframes float {
-0%, 100% { transform: translateY(0px) rotate(0deg); }
-50% { transform: translateY(-20px) rotate(5deg); }
-}
-
-/* page circle animations */
-@layer utilities {
-  .float-slow {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .delay-1 {
-    animation-delay: 1s;
-  }
-
-  .delay-2 {
-    animation-delay: 2s;
-  }
-
-  .delay-3 {
-    animation-delay: 3s;
-  }
-
-  .delay-4 {
-    animation-delay: 4s;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-}
-
-
-/* what i bring & funfact animation*/
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+@keyframes draw {
   to {
-    opacity: 1;
-    transform: translateY(0);
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tick path {
+    animation: none;
+    stroke-dashoffset: 0;
   }
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out forwards;
+.toast-ui {
+  font-family: var(--font-sans), system-ui, sans-serif;
 }

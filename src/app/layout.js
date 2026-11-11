@@ -1,53 +1,36 @@
-import {
-  Pompiere,
-  Roboto_Condensed,
-  Inter,
-  Sacramento,
-  Gwendolyn,
-} from "next/font/google";
-import ThemeToggle from "./ThemeToggle";
+import { IBM_Plex_Sans, IBM_Plex_Sans_Condensed, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import ChatBubble from "./ChatBubble";
-// Fonts
 
-const pompiere = Pompiere({
+const sans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--pompiere-font",
+  weight: ["400", "500"],
+  variable: "--font-sans",
+  display: "swap",
 });
-const gwendolyn = Gwendolyn({
+const display = IBM_Plex_Sans_Condensed({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--gwendolyn-font",
+  weight: ["500", "600"],
+  variable: "--font-display",
+  display: "swap",
 });
-const roboto = Roboto_Condensed({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "700", "800", "900"],
-  variable: "--roboto-font",
-});
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "700", "800", "900"],
-  variable: "--inter-font",
-});
-const sacramento = Sacramento({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--sacramento-font",
+  variable: "--font-mono",
+  display: "swap",
 });
 
+const description =
+  "Daysuwa (Adesuwa Aiwerioghene) is a software engineer in Lagos who builds software for finance and risk teams. Acting Engineering Lead at Kachex, formerly Deloitte technology assurance.";
+
 export const metadata = {
-  title: "Adesuwa Aiwerioghene | Front-End Developer",
-  description:
-    "Adesuwa Aiwerioghene — Front-End Developer crafting clean, responsive web experiences with React, Next.js, and Tailwind CSS. Open to collaborations!",
-  icons: {
-    icon: "/favicon.ico",
-  },
+  title: "Daysuwa | Software engineer",
+  description,
   openGraph: {
-    title: "Adesuwa Aiwerioghene | Front-End Developer",
-    description:
-      "Portfolio of Adesuwa Aiwerioghene — Front-End Developer crafting clean, responsive web experiences with React, Next.js, and Tailwind CSS.",
+    title: "Daysuwa | Software engineer",
+    description,
     url: "https://www.adesuwa.dev",
     type: "website",
     images: [
@@ -55,26 +38,24 @@ export const metadata = {
         url: "https://www.adesuwa.dev/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Adesuwa Aiwerioghene Portfolio",
+        alt: "Daysuwa, software engineer",
       },
     ],
   },
 };
-export default function RootLayout({ children }) {
-  // const [isDark, setIsDark] = useState(false);
 
+// Sets the theme before the page paints, so there is no flash.
+const themeScript = `try{var t=localStorage.getItem("theme");var d=t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}`;
+
+export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`
-          min-h-screen bg-[#fefefe] text-black dark:bg-black dark:text-white transition-colors duration-300 scroll-smooth
-          ${pompiere.variable} ${roboto.variable} ${inter.variable} ${gwendolyn.variable} ${sacramento.variable}
-        `}
-      >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className={`${sans.variable} ${display.variable} ${mono.variable} min-h-screen`}>
         {children}
-        <ThemeToggle />
-        <Toaster />
-        {/* @ts-ignore */}
+        <Toaster toastOptions={{ className: "toast-ui" }} />
         <ChatBubble />
       </body>
     </html>
