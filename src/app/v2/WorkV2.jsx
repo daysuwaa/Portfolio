@@ -95,7 +95,7 @@ export default function WorkV2() {
           transition: { duration: 0.55, delay: i * 0.12, ease: "easeOut" },
         };
   return (
-    <section id="work" className="pt-24">
+    <section id="work" className="pt-16">
       <h2 className="font-display text-[1.75rem] font-semibold tracking-tight">Work</h2>
 
       <div
