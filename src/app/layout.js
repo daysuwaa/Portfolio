@@ -1,4 +1,4 @@
-import { IBM_Plex_Sans, IBM_Plex_Sans_Condensed, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Sans_Condensed, IBM_Plex_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import ChatBubble from "./ChatBubble";
@@ -19,6 +19,13 @@ const mono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-mono",
+  display: "swap",
+});
+
+const hand = Caveat({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-hand",
   display: "swap",
 });
 
@@ -53,7 +60,7 @@ export default function RootLayout({ children }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${sans.variable} ${display.variable} ${mono.variable} min-h-screen`}>
+      <body className={`${sans.variable} ${display.variable} ${mono.variable} ${hand.variable} min-h-screen`}>
         {children}
         <Toaster toastOptions={{ className: "toast-ui" }} />
         <ChatBubble />
