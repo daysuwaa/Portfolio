@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { notificationEmail, autoReplyEmail } from "./mail";
 
 export const runtime = "nodejs";
 
@@ -29,7 +30,6 @@ export async function POST(req) {
     return NextResponse.json({ error: "Not configured" }, { status: 500 });
   }
 
-  const esc = (v) => v.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const send = (payload) =>
     fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -40,23 +40,15 @@ export async function POST(req) {
   const from = process.env.CONTACT_FROM || "Portfolio <onboarding@resend.dev>";
   const when = new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Africa/Lagos" }).format(new Date());
 
-  const html = `<div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:0 auto;padding:24px;color:#16181d">
-  <p style="margin:0 0 4px;font-size:13px;color:#5b6270">New message from your portfolio &middot; ${when} (Lagos)</p>
-  <h2 style="margin:0 0 16px;font-size:20px">${esc(name)}</h2>
-  <p style="margin:0 0 20px;font-size:15px"><a href="mailto:${esc(email)}" style="color:#c8135b">${esc(email)}</a></p>
-  <div style="border-left:3px solid #c8135b;padding:2px 0 2px 14px;font-size:16px;line-height:1.6;white-space:pre-wrap">${esc(message)}</div>
-  <p style="margin:24px 0 0;font-size:13px;color:#5b6270">Hit reply to answer ${esc(name)} directly.</p>
-</div>`;
-
   let res;
   try {
     res = await send({
-    from,
-    to: [to],
-    reply_to: email,
-    subject: `Portfolio message from ${name}`,
-    html,
-    text: `From: ${name} <${email}>\nSent: ${when} (Lagos)\n\n${message}`,
+      from,
+      to: [to],
+      reply_to: email,
+      subject: `Portfolio message from ${name}`,
+      html: notificationEmail({ name, email, message, when }),
+      text: `From: ${name} <${email}>\nSent: ${when} (Lagos)\n\n${message}`,
     });
   } catch (err) {
     console.error("Contact form: could not reach Resend", err);
@@ -77,7 +69,8 @@ export async function POST(req) {
       to: [email],
       reply_to: to,
       subject: "Thanks for getting in touch",
-      text: `Hi ${first},\n\nThanks for your message. I've got it and I'll reply as soon as I can.\n\nDaysuwa`,
+      html: autoReplyEmail({ first, message }),
+      text: `Hi ${first},\n\nThanks for reaching out. Your message came through and I'll reply personally, usually within a couple of days.\n\nWhat you sent:\n${message}\n\nTalk soon,\nDaysuwa\nhttps://daysuwa.dev`,
     }).catch(() => null);
     if (r2 && !r2.ok) console.error("Contact form: auto-reply failed", r2.status, await r2.text());
   }
