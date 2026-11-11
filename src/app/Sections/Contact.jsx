@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import emailjs from "@emailjs/browser";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" };
 
@@ -14,28 +13,27 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     setSending(true);
     const id = toast.loading("Sending message");
-    emailjs
-      .send(
-        "service_gs4zw5w",
-        "template_pzsa7dm",
-        { name, email, message },
-        "7N9NF5iWRaVmXltM_"
-      )
-      .then(() => {
-        toast.success("Message sent", { id });
-        setName("");
-        setEmail("");
-        setMessage("");
-      })
-      .catch((err) => {
-        console.error("EmailJS error:", err);
-        toast.error("Message not sent. Check your connection and try again.", { id });
-      })
-      .finally(() => setSending(false));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message, website: e.target.website?.value || "" }),
+      });
+      if (!res.ok) throw new Error(`Status ${res.status}`);
+      toast.success("Message sent", { id });
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error("Contact form error:", err);
+      toast.error("Message not sent. Please email me directly at adesuwaaiwerioghene12@gmail.com", { id, duration: 8000 });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -72,6 +70,7 @@ export default function Contact() {
         </div>
 
         <form onSubmit={submit} className="space-y-5">
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
           <div>
             <label htmlFor="c-name" className="font-medium">
               Your name
