@@ -3,6 +3,7 @@ import HeroV2 from "./v2/HeroV2";
 import WorkV2 from "./v2/WorkV2";
 import Writing from "./Sections/Writing";
 import Experience from "./Sections/Experience";
+import Activity from "./Sections/Activity/Activity";
 import Tool from "./Sections/Tool";
 import About from "./Sections/AboutMe/About";
 import Contact from "./Sections/Contact";
@@ -17,6 +18,7 @@ export default function Page() {
         <WorkV2 />
         <Writing />
         <Experience />
+        <Activity />
         <Tool />
         <About />
         <Contact />

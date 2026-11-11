@@ -38,11 +38,11 @@ export const metadata = {
   openGraph: {
     title: "Daysuwa | Software engineer",
     description,
-    url: "https://www.adesuwa.dev",
+    url: "https://daysuwa.dev",
     type: "website",
     images: [
       {
-        url: "https://www.adesuwa.dev/og-image.png",
+        url: "https://daysuwa.dev/og-image.png",
         width: 1200,
         height: 630,
         alt: "Daysuwa, software engineer",
