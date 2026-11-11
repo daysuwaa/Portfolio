@@ -10,6 +10,15 @@ const ext = { target: "_blank", rel: "noopener noreferrer" };
 
 const cards = [
   {
+    title: "Billio",
+    blurb: "A subscription tracker for people in Nigeria who pay for foreign services by card. It counts down to the next charge and emails a reminder before it lands. Gmail import runs in the browser, so emails are never uploaded.",
+    stack: "React, TypeScript, Supabase, Resend, Vercel",
+    image: billioPhone,
+    contain: true,
+    live: "https://billio-three.vercel.app",
+    code: "https://github.com/daysuwaa/billio",
+  },
+  {
     title: "Stock Mate",
     blurb: "Inventory tracking for small sellers such as hair vendors and boutiques.",
     stack: "Next.js, TypeScript, Prisma, PostgreSQL",
@@ -89,38 +98,28 @@ export default function WorkV2() {
     <section id="work" className="pt-24">
       <h2 className="font-display text-[1.75rem] font-semibold tracking-tight">Work</h2>
 
-      <motion.article {...reveal()} className="group mt-6 grid overflow-hidden rounded-2xl border border-rule bg-sheet lg:grid-cols-[1fr_0.8fr]">
-        <div className="p-8 sm:p-10">
-          <p className="text-sm text-pen">Featured, live</p>
-          <h3 className="mt-2 font-display text-[2.75rem] font-semibold leading-none tracking-tight">Billio</h3>
-          <p className="mt-4 max-w-[48ch] text-[1.125rem] leading-relaxed">
-            A subscription tracker for people in Nigeria who pay for foreign services by card. It counts down to the
-            next charge and emails a reminder before it lands.
-          </p>
-          <p className="mt-4 text-mute">Gmail import runs in the browser, so emails are never uploaded.</p>
-          <p className="mt-3 text-mute">React, TypeScript, Supabase, Resend, Vercel</p>
-          <p className="mt-7 flex gap-6">
-            <a href="https://billio-three.vercel.app" className="link font-medium" {...ext}>Open Billio</a>
-            <a href="https://github.com/daysuwaa/billio" className="link font-medium" {...ext}>Read the code</a>
-          </p>
-        </div>
-        <div className="flex items-center justify-center bg-paper p-8">
-          <Image src={billioPhone} alt="Billio on a phone" className="h-auto w-[62%] transition-transform duration-500 group-hover:-translate-y-1.5 lg:w-[70%]" />
-        </div>
-      </motion.article>
-
       <div
         ref={track}
         onScroll={onScroll}
-        className="-mx-5 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0"
+        className="-mx-5 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 md:mx-0 md:block md:overflow-visible md:border-b md:border-rule md:px-0 md:pb-0"
       >
         {cards.map((p, i) => (
-          <motion.article key={p.title} {...reveal(i)} className="flex w-[82%] shrink-0 snap-center flex-col md:w-auto md:shrink overflow-hidden rounded-2xl border border-rule bg-sheet transition-colors hover:border-ink">
-            <div className="relative aspect-[16/10] bg-paper">
+          <motion.article
+            key={p.title}
+            {...reveal(i)}
+            className="w-[82%] shrink-0 snap-center rounded-md border border-rule bg-sheet p-4 md:grid md:w-auto md:grid-cols-[15rem_1fr] md:gap-8 md:rounded-none md:border-0 md:border-t md:bg-transparent md:px-0 md:py-8"
+          >
+            <div className={`relative aspect-[16/10] overflow-hidden rounded-md border border-rule ${p.contain ? "bg-ink" : "bg-paper"}`}>
               {p.image ? (
-                <Image src={p.image} alt={`${p.title} screenshot`} fill sizes="(max-width:768px) 100vw, 360px" className="object-cover object-top" />
+                <Image
+                  src={p.image}
+                  alt={`${p.title} screenshot`}
+                  fill
+                  sizes="(max-width:768px) 80vw, 240px"
+                  className={p.contain ? "object-contain p-2" : "object-cover object-top"}
+                />
               ) : (
-                <div className="flex h-full items-end p-5">
+                <div className="flex h-full items-end p-4">
                   <svg viewBox="0 0 120 60" className="w-full text-pen" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                     <path d="M2 52 L30 40 L50 44 L75 22 L98 18 L118 6" strokeLinecap="round" strokeLinejoin="round" />
                     {[[30,40],[50,44],[75,22],[98,18]].map(([x,y]) => <circle key={x} cx={x} cy={y} r="2.6" fill="currentColor" />)}
@@ -128,13 +127,13 @@ export default function WorkV2() {
                 </div>
               )}
             </div>
-            <div className="flex flex-1 flex-col p-5">
-              <h3 className="font-display text-[1.35rem] font-semibold tracking-tight">{p.title}</h3>
-              <p className="mt-2">{p.blurb}</p>
-              <p className="mt-2 text-sm text-mute">{p.stack}</p>
-              <p className="mt-auto flex gap-5 pt-4">
-                {p.live ? <a href={p.live} className="link font-medium" {...ext}>Open</a> : null}
-                <a href={p.code} className="link font-medium" {...ext}>Code</a>
+            <div className="mt-4 md:mt-0">
+              <h3 className="font-display text-[1.375rem] font-semibold tracking-tight">{p.title}</h3>
+              <p className="mt-1.5 max-w-[58ch]">{p.blurb}</p>
+              <p className="mt-1.5 text-mute">{p.stack}</p>
+              <p className="mt-3 flex gap-5">
+                {p.live ? <a href={p.live} className="link" {...ext}>Open</a> : null}
+                <a href={p.code} className="link" {...ext}>Code</a>
               </p>
             </div>
           </motion.article>
