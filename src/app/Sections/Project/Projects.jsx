@@ -25,7 +25,7 @@ const items = [
     code: "https://github.com/daysuwaa/momento_fe",
   },
   {
-    title: "Oraimo sales forecaster",
+    title: "Product sales forecaster",
     blurb: "A regression model that predicts units sold by product and region, with a dashboard to explore the data and try what-if scenarios. Built on simulated sales data.",
     stack: "Python, scikit-learn, FastAPI, .NET API, React",
     code: "https://github.com/daysuwaa/ai-analysis",
