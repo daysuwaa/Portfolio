@@ -15,7 +15,7 @@ const cards = [
     stack: "React, TypeScript, Supabase, Resend, Vercel",
     image: billioPhone,
     contain: true,
-    live: "https://billio-three.vercel.app",
+    live: "https://billio.daysuwa.dev",
     code: "https://github.com/daysuwaa/billio",
   },
   {

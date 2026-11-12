@@ -100,7 +100,7 @@ export default function Projects() {
             ))}
           </dl>
           <p className="mt-6 flex gap-6">
-            <a href="https://billio-three.vercel.app" className="link font-medium" {...ext}>
+            <a href="https://billio.daysuwa.dev" className="link font-medium" {...ext}>
               Open Billio
             </a>
             <a href="https://github.com/daysuwaa/billio" className="link font-medium" {...ext}>
