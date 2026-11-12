@@ -8,7 +8,7 @@ const links = [
   ["GitHub", "https://github.com/daysuwaa"],
   ["LinkedIn", "https://www.linkedin.com/in/adesuwa-aiwerioghene-04538b268/"],
   ["X", "https://x.com/daysuwaa_a"],
-  ["Resume", "/Aiwerioghene AdesuwaResume (1).pdf"],
+  ["Resume", "/Adesuwa-Aiwerioghene-CV.pdf"],
 ];
 
 function Avatar({ className = "" }) {

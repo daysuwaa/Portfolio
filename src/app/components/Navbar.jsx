@@ -43,7 +43,7 @@ export default function Navbar() {
       ...links.map((l) => ({ label: l.label, kind: "Section", run: () => go(l.id) })),
       { label: "All posts", kind: "Writing", run: () => (window.location.href = "/writing") },
       { label: "Open Billio", kind: "Project", run: () => open("https://billio.daysuwa.dev") },
-      { label: "Download resume", kind: "File", run: () => open(encodeURI("/Aiwerioghene AdesuwaResume (1).pdf")) },
+      { label: "Download resume", kind: "File", run: () => open("/Adesuwa-Aiwerioghene-CV.pdf") },
       { label: "Email Daysuwa", kind: "Contact", run: () => (window.location.href = "mailto:adesuwaaiwerioghene12@gmail.com") },
       { label: "GitHub", kind: "Link", run: () => open("https://github.com/daysuwaa") },
       { label: "LinkedIn", kind: "Link", run: () => open("https://www.linkedin.com/in/adesuwa-aiwerioghene-04538b268/") },
